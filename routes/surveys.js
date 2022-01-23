@@ -4,3 +4,17 @@ var surveysCtrl = require('../controllers/surveys');
 var isLoggedIn = require('../config/auth');
 
 // All routes start with "/surveys"
+
+// Providers will be a public route and won't be behind the OAuth
+// GET /surveys (start of the survey funnel)
+router.get('/', surveysCtrl.index);
+
+// GET /surveys/new (display a form for entering a new survey info into database)
+router.get('/new', surveysCtrl.new);
+
+// POST /surveys (handles the new form being submitted)
+router.post('/', surveysCtrl.create);
+
+
+
+module.exports = router;

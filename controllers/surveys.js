@@ -1,7 +1,19 @@
 const Survey = require('../models/survey');
-const Provider = require('../models/provider');
-const Recipe = require('../models/recipe');
 
 module.exports = {
-  
+  index,
+  new: newSurvey,
+  create
 };
+
+function index(req, res) {
+
+}
+
+function newSurvey(req, res) {
+
+}
+
+function create(req, res) {
+    
+}
