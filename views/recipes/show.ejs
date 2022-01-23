@@ -8,16 +8,10 @@
   <div>Description: </div>
   <div><%= recipe.description %></div>
   <div>Recipe Category: </div>
-  <select name="category">
-    <option value="vegan" selected>Vegan</option>
-    <option value="keto">Keto</option>
-    <option value="mediterranean">Mediterranean</option>
-    <option value="golo">Golo</option>
-    <option value="pegan" >Pegan</option>
-    <option value="prolon" >Prolon</option>
-  </select>
-  <img src="" alt="<%= recipe.recipeName %>"> 
-  <!-- ask Jim how to add the photos -->
+  <div><%= recipe.recipeCategory %></div>
+  <br><br>    
+    <img src="" alt="<%= recipe.recipeName %>"> 
+  <!-- ask Jim how to add the photos for this project-->
   <div>Recipe Text: </div>
   <div><%= recipe.recipeText %></div>
 </section>
@@ -51,7 +45,7 @@
       <tr>
         <th>User</th>
         <th>Date</th>
-        <th>Review</th>
+        <th>Comments</th>
         <th></th>
       </tr>
     </thead>

@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<form id="new-recipe-form" action="/recipes/new" method="POST">
+  <label>Recipe Name:</label>
+  <input type="text" name="recipeName">
+  <label>Submitter's Email: </label>
+  <input type="text" name="email">
+  <label>Description:</label>
+  <textarea type="text" name="description">
+  <label>Recipe Category:</label>
+  <select name="recipeCategory">
+    <option value="vegan" selected>Vegan</option>
+    <option value="keto">Keto</option>
+    <option value="mediterranean">Mediterranean</option>
+    <option value="golo">Golo</option>
+    <option value="pegan">Pegan</option>
+    <option value="prolon">Prolon</option>
+  </select>
+  <input type="image" src="image_submit.gif" alt="Submit" width="48" height="48">
+  
+  <br><br>
+  <button type="submit">Add Provider</button>
+</form>
+<label>Add Receipt Below:</label>
+  <textarea type="text" name="recipeText">
+
+
+<%- include('../partials/footer') %>

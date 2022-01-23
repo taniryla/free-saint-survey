@@ -28,7 +28,7 @@ const recipeSchema = new Schema({
         type: String,
         required: true
     },
-    category: {
+    recipeCategory: {
         type: String,
         enum: ['Vegan', 'Keto', 'Mediterranean', 'Golo', 'Pegan', 'Prolon'], 
         required: true
