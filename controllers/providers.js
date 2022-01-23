@@ -10,7 +10,7 @@ module.exports = {
 function index(req, res) {
     Provider.find({})
     .then(function (providers) {
-      res.render('provider/index', { title: 'All Health Provider', providers });
+      res.render('providers/index', { title: 'All Health Providers', providers });
     })
     .catch(function (err) {
       res.redirect('/providers');
