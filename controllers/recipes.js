@@ -1,6 +1,6 @@
 const Survey = require('../models/survey');
 const Provider = require('../models/provider');
-const Blog = require('../models/blog');
+const Recipe = require('../models/recipe');
 
 module.exports = {
   

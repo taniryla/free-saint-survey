@@ -5,7 +5,7 @@ const statesArray = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL",
 
 
 const reviewSchema = new Schema({
-    text: {
+    textReviews: {
         type: String,
         required: true,
     },
@@ -34,7 +34,7 @@ const providerSchema = new Schema({
     service: {
         type: String,
         required: true,
-        enum: ['Endocrinologist', 'Nutritionist', 'Health Coach', 'Accupunturist', 'Personal Trainer']
+        enum: ['Endocrinologist', 'Nutritionist', 'Health Coach', 'Accupunturist', 'Personal Trainer', 'Embodiment Coach', 'Sleep Expert']
     }, 
     email: String,
     address: {

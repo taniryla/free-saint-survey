@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
+<section id="providers-show-page">
   <div>Name: </div>
   <div><%= provider.name %></div>
   <div>Service: </div>
@@ -10,6 +10,8 @@
     <option value="nutritionist">Nutritionist</option>
     <option value="accupunturist">Accupunturist</option>
     <option value="personalTrainer" >Personal Trainer</option>
+    <option value="embodiment" >Embodiment Coach</option>
+    <option value="sleepExpert" >Sleep Expert</option>
   </select>
   <div>Email: </div>
   <div><%= provider.email %></div>
@@ -21,16 +23,19 @@
         <div><%= provider.address.zip %></div>
     </section>
  <input type="text">
-  <div>Provider's Free Saint URL: </div>
-  <div><%= provider.providerFSURL %></div>
+  <!-- <div>Provider's Free Saint URL: </div>
+  <div>
+     /*  squid provider.providerFSURL squid
+    </div> --> 
+  <!-- // need to autogenerate in the create function TODO -->
 </section>
 <form id="add-provider-review" action="/provider/<%= provider._id %>/new"  method="POST">
-  <select name="providerId">
+  <select name="reviews">
     <%- provider.map(p => %>
       `<option value="${p._id}">${p.name}</option>`
       <% ).join('') %>
   </select>
-  <button type="submit">Add Health Provider Review</button>
+  <button type="submit">Add Review</button>
 </form>
 
 <!-- subdocument Reviews -->
@@ -38,9 +43,9 @@
 <br><br><h2>Reviews</h2>
 <% if (user) { %>
   <form id="add-review-form" method="POST"
-    action="/provider/<%= provider._id %>/reviews">
+    action="/providers/<%= provider._id %>/reviews">
     <label>Review:</label>
-    <textarea name="content"></textarea>
+    <textarea name="textReviews"></textarea>
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -69,9 +74,9 @@
       <% provider.reviews.forEach(function(p) { %>
         <% total += p.rating %>
         <tr>
-          <td class="review-user"><img alt="avatar" src="<%= p.userAvatar %>"><%= r.userName %></td>
+          <td class="review-user"><img alt="avatarReviews" src="<%= p.userAvatar %>"><%= p.userName %></td>
           <td><%= p.createdAt.toLocaleDateString() %></td>
-          <td><%= p.text %></td>
+          <td><%= p.textReviews %></td>
           <td><%= p.rating %></td>
           <td>
             <% if (user && user._id.equals(p.user)) { %>
