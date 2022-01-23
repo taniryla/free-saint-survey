@@ -1,0 +1,95 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= provider.name %></div>
+  <div>Service: </div>
+  <select name="service">
+    <option value="endocrinologist" selected>Endocrinologist</option>
+    <option value="healthCoach">Health Coach</option>
+    <option value="nutritionist">Nutritionist</option>
+    <option value="accupunturist">Accupunturist</option>
+    <option value="personalTrainer" >Personal Trainer</option>
+  </select>
+  <div>Email: </div>
+  <div><%= provider.email %></div>
+  <div>Address: </div>
+    <section>
+        <div><%= provider.address.street %></div>
+        <div><%= provider.address.city %></div>
+        <div><%= provider.address.state %></div>
+        <div><%= provider.address.zip %></div>
+    </section>
+ <input type="text">
+  <div>Provider's Free Saint URL: </div>
+  <div><%= provider.providerFSURL %></div>
+</section>
+<form id="add-provider-review" action="/provider/<%= provider._id %>/new"  method="POST">
+  <select name="providerId">
+    <%- provider.map(p => %>
+      `<option value="${p._id}">${p.name}</option>`
+      <% ).join('') %>
+  </select>
+  <button type="submit">Add Health Provider Review</button>
+</form>
+
+<!-- subdocument Reviews -->
+
+<br><br><h2>Reviews</h2>
+<% if (user) { %>
+  <form id="add-review-form" method="POST"
+    action="/provider/<%= provider._id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Review">
+  </form>
+<% } %>
+
+<% if (provider.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% provider.reviews.forEach(function(p) { %>
+        <% total += p.rating %>
+        <tr>
+          <td class="review-user"><img alt="avatar" src="<%= p.userAvatar %>"><%= r.userName %></td>
+          <td><%= p.createdAt.toLocaleDateString() %></td>
+          <td><%= p.text %></td>
+          <td><%= p.rating %></td>
+          <td>
+            <% if (user && user._id.equals(p.user)) { %>
+              <form action="/reviews/<%= p._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="3"></td>
+        <td><strong><%= (total / provider.reviews.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+  
+<%- include('../partials/footer') %>
