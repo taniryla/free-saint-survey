@@ -48,13 +48,6 @@ const providerSchema = new Schema({
         },
         zip: Number
     },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
-    text: String,
-    providerFSURL: String,
-    userName: String,
     reviews: [reviewSchema]
 }, {
     timestamps: true

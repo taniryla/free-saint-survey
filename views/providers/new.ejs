@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/providers/new" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Service:</label>
+  <select name="service">
+    <option value="endocrinologist" selected>Endocrinologist</option>
+    <option value="healthCoach">Health Coach</option>
+    <option value="nutritionist">Nutritionist</option>
+    <option value="accupunturist">Accupunturist</option>
+    <option value="personalTrainer">Personal Trainer</option>
+  </select>
+  <label>Email: </label>
+  <input type="text" name="email">
+  <label>Address:</label>
+  <section>
+    <label>Street:</label>
+    <input type="text" name="address.street">
+    <label>City:</label>
+    <input type="text" name="address.city">
+    <label>State(i.e. CO):</label>
+    <input type="text" name="address.state">
+    <label>Zip:</label>
+    <input type="number" name="address.zip">
+  </section>
+  <br><br>
+  <button type="submit">Add Provider</button>
+</form>
+
+<%- include('../partials/footer') %>
