@@ -1,14 +1,18 @@
-<%- include('../partials/surveytemplate') %>
+<%- include('../partials/header') %>
 
 <div id="containerView3">
     <img id="containerView3Photo" src="https://i.imgur.com/9P9idMf.png" alt="doctor standing with thumbs up">
     <div id="rightContainer">
         <div id="text-box"></div>
-            <button id="leftbtn">Back</button>
+            <button id="leftbtn">Back
+                <form action="./view2.ejs" method="POST">
+                    <input type="submit">   
+                </form>
+            </button>
             <button id="rightbtn">Save</button>
         <div id="btn-box"></div>
+        <button id="saveandnext">Save And Next</button>
     </div>
-    <button id="saveandnext">Save And Next</button>
 </div>
 
 <%- include('../partials/footer') %>
