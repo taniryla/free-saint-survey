@@ -2,7 +2,6 @@ const Survey = require('../models/survey');
 
 module.exports = {
   index,
-  new: newSurvey,
   create
 };
 
@@ -14,10 +13,6 @@ function index(req, res) {
   .catch(function(err) {
     res.redirect('/surveys');
   });
-}
-
-function newSurvey(req, res) {
-
 }
 
 function create(req, res) {
