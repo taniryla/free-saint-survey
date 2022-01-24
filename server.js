@@ -6,6 +6,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
+const bootstrap = require('bootstrap');
 
 require('dotenv').config();
 // Connect to the MongoDB database
