@@ -52,7 +52,7 @@ function view2create(req, res) {
 }
 
 function view3(req, res) {
-  res.render('surveys/view3', { surveys });
+  res.render('surveys/view3');
 }
 
 function view3create(req, res) {
