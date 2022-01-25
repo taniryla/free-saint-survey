@@ -28,7 +28,7 @@ function show(req, res){
     };
 
 
-function create() {
+function create(req, res) {
   var provider = new Provider(req.body);
   provider.save(function (err) {
     // one way to handle errors

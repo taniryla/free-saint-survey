@@ -22,21 +22,10 @@
         <div><%= provider.address.state %></div>
         <div><%= provider.address.zip %></div>
     </section>
- <input type="text">
-  <!-- <div>Provider's Free Saint URL: </div>
-  <div>
-     /*  squid provider.providerFSURL squid
-    </div> --> 
-  <!-- // need to autogenerate in the create function TODO -->
+ 
+ 
 </section>
-<form id="add-provider-review" action="/provider/<%= provider._id %>/new"  method="POST">
-  <select name="reviews">
-    <%- provider.map(p => %>
-      `<option value="${p._id}">${p.name}</option>`
-      <% ).join('') %>
-  </select>
-  <button type="submit">Add Review</button>
-</form>
+
 
 <!-- subdocument Reviews -->
 
@@ -45,7 +34,7 @@
   <form id="add-review-form" method="POST"
     action="/providers/<%= provider._id %>/reviews">
     <label>Review:</label>
-    <textarea name="textReviews"></textarea>
+    <textarea name="text"></textarea>
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -76,7 +65,7 @@
         <tr>
           <td class="review-user"><img alt="avatarReviews" src="<%= p.userAvatar %>"><%= p.userName %></td>
           <td><%= p.createdAt.toLocaleDateString() %></td>
-          <td><%= p.textReviews %></td>
+          <td><%= p.text %></td>
           <td><%= p.rating %></td>
           <td>
             <% if (user && user._id.equals(p.user)) { %>

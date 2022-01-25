@@ -188,19 +188,19 @@ li {
   height: 40px;
 }
 
-.containerView {
+.containerview {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-areas: 
   "photo text";
 }
 
-.containerViewPhoto {
+.containerviewphoto {
   grid-area: photo;
   width: 80vmin;
 }
 
-.rightContainerView {
+.rightcontainerview {
   display: flex;
   flex-direction: column;
   justify-content: center;

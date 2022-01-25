@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const surveySchema = new Schema({
-    topPriority: {
+    toppriority: {
         type: String,
         required: true,
         enum: ['better sleep', 'fewer cravings', 'more energy', 'better mood', 'fit into clothes', 'protect health']
@@ -13,28 +13,28 @@ const surveySchema = new Schema({
         required: true,
         enum: ['male', 'female', 'mtf', 'ftm', 'non-binary bigender', 'self-identify', 'asexual', 'prefer not to say']
     },
-    hormoneStatus: {
+    hormonestatus: {
         type: String,
         required: true, 
         enum: ['not using any hormones', 'birth control for pregnancy', 'birth control for symptoms', 'progesterone only', 'I take HRT/estrogen', 'I take TRT/testosterone']
     },
-    healthRisks1: {
+    healthrisks1: {
         type: String,
         required: true,
         enum: ['heart disease or stroke', 'heavy/polyps', 'endometriosis', 'severe pms', 'pcos or progesterone', 'menopause', 'partial hysterectomy', 'full hysterectomy', 'high blood pressure', 'diabetes', 'nash', 'high cholesterol']
     },
-    healthRisks2: {
+    healthrisks2: {
         type: String,
         required: true,
         enum: ['imsomnia', 'osteoarthritis', 'kidney disease', 'depression', 'none', 'other (write below'],
         healthRisksWriteBelow: String
     },
-    topBarrier: {
+    topbarrier: {
         type: String,
         required: true,
         enum: ['busy schedule', 'injury/medical condition', 'low energy', 'nothing works', 'pleateau', 'not a challenge']
     },
-    bodyShape: {
+    bodyshape: {
         type: String,
         required: true,
         enum: ['average shape', 'curvy', 'apple shape', '45 and losing my shape', '55 and gaining belly fat', 'severely obese']
@@ -47,7 +47,7 @@ const surveySchema = new Schema({
         type: Number,
         required: true
     }, 
-    targetWeight: {
+    targetweight: {
         type: Number,
         required: true
     }, 

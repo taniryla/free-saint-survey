@@ -5,7 +5,7 @@ const statesArray = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL",
 
 
 const reviewSchema = new Schema({
-    textReviews: {
+    text: {
         type: String,
         required: true,
     },
@@ -28,7 +28,7 @@ const reviewSchema = new Schema({
 
 const providerSchema = new Schema({
     name: {
-        type: Number,
+        type: String,
         required: true
     },
     service: {
