@@ -21,12 +21,13 @@ const surveySchema = new Schema({
     healthRisks1: {
         type: String,
         required: true,
-        enum: ['heart disease or stroke', 'heavy/polyps or endometriosis', 'severe pms', 'pcos or progesterone', 'menopause', 'partial hysterectomy', 'full hysterectomy', 'high blood pressure', 'diabetes', 'nash', 'high cholesterol']
+        enum: ['heart disease or stroke', 'heavy/polyps', 'endometriosis', 'severe pms', 'pcos or progesterone', 'menopause', 'partial hysterectomy', 'full hysterectomy', 'high blood pressure', 'diabetes', 'nash', 'high cholesterol']
     },
     healthRisks2: {
         type: String,
         required: true,
-        enum: ['imsomnia', 'osteoarthritis', 'kidney disease', 'depression', 'none', 'other (write below']
+        enum: ['imsomnia', 'osteoarthritis', 'kidney disease', 'depression', 'none', 'other (write below'],
+        healthRisksWriteBelow: String
     },
     topBarrier: {
         type: String,

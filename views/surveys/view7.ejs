@@ -1,5 +1,40 @@
 <%- include('../partials/header') %>
 
+<div class="containerView">
+    <img class="containerViewPhoto" src="https://i.imgur.com/N0YkklO.png" alt="doctor with open arms">
+    <div class="rightContainer">
+        <div class="text-box">
+            <form method="post" action="/surveys/view7">      
+                <fieldset>
+                    <legend>Are you at risk for the following? (Continued from last screen)<legend><br>            
+                        <input type="checkbox" name="topPriority" value="insomnia"> insomnia<br>
+                        <input type="checkbox" name="topPriority" value="osteoarthritis"> osteoarthritis<br>
+                        <input type="checkbox" name="topPriority" value="kidney disease"> kidney disease<br>
+                        <input type="checkbox" name="topPriority" value="depression"> depression<br>
+                        <input type="checkbox" name="topPriority" value="none"> none<br>
+                        <input type="checkbox" name="topPriority" value="other (write below)"> other (write below)<br>
+                        <textarea name="healthRisksWriteBelow" id="" cols="30" rows="10"></textarea>
+                </fieldset>
+            <br>
+        </div>
 
+            <button class="btn btn-success mb-3 mr-6 leftbtn" type="submit">Back
+                <form action="./view6" method="POST"> 
+                    <input type="submit">
+                </form>
+            </button>
+            <button class="btn btn-success mb-3 ml-6 rightbtn" type="submit">Save
+                <form action="./view8" method="POST"> 
+                    <input type="submit">
+                </form>
+            </button>
+        <div class="btn-box"></div>
+        <button class="btn btn-success saveandnext">Save And Next
+            <form action="./view8" method="POST"> 
+                <input type="submit">
+            </form>
+        </button>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>

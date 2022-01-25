@@ -1,5 +1,45 @@
 <%- include('../partials/header') %>
 
+<div class="containerView">
+    <img class="containerViewPhoto" src="https://i.imgur.com/mWNvFsn.png" alt="doctor with too much paperwork">
+    <div class="rightContainer">
+        <div class="text-box">
+            <form method="post" action="/surveys/view6">      
+                <fieldset>
+                    <legend>Are you at risk for the following?<legend><br>            
+                        <input type="checkbox" name="topPriority" value="heart disease or stroke"> heart disease or stroke<br>
+                        <input type="checkbox" name="topPriority" value="heavy/polyps"> heavy/polyps <br>
+                        <input type="checkbox" name="topPriority" value="endometriosis"> endometriosis<br>
+                        <input type="checkbox" name="topPriority" value="severe pms"> severe pms<br>
+                        <input type="checkbox" name="topPriority" value="pcos or progesterone"> pcos or progesterone<br>
+                        <input type="checkbox" name="topPriority" value="partial hysterectomy"> partial hysterectomy<br>
+                        <input type="checkbox" name="topPriority" value="full hysterectomy"> full hysterectomy<br>
+                        <input type="checkbox" name="topPriority" value="high blood pressure"> high blood pressure<br>
+                        <input type="checkbox" name="topPriority" value="diabetes"> diabetes<br>
+                        <input type="checkbox" name="topPriority" value="menopause"> menopause<br>
+                        <input type="checkbox" name="topPriority" value="nash"> nash<br>
+                        <input type="checkbox" name="topPriority" value="high cholesterol"> high cholesterol<br>
+                </fieldset>
+            <br>
+        </div>
 
+            <button class="btn btn-success mb-3 mr-6 leftbtn" type="submit">Back
+                <form action="./view5" method="POST"> 
+                    <input type="submit">
+                </form>
+            </button>
+            <button class="btn btn-success mb-3 ml-6 rightbtn" type="submit">Save
+                <form action="./view7" method="POST"> 
+                    <input type="submit">
+                </form>
+            </button>
+        <div class="btn-box"></div>
+        <button class="btn btn-success saveandnext">Save And Next
+            <form action="./view7" method="POST"> 
+                <input type="submit">
+            </form>
+        </button>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>

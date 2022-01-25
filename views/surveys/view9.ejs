@@ -1,5 +1,39 @@
 <%- include('../partials/header') %>
 
+<div class="containerView">
+    <img class="containerViewPhoto" src="https://i.imgur.com/qHuaV6P.png" alt="doctor with xrays">
+    <div class="rightContainer">
+        <div class="text-box">
+            <form method="post" action="/surveys/view8">      
+                <fieldset>
+                    <legend>What best describes your body shape?<legend><br>            
+                        <input type="checkbox" name="topPriority" value="average shape"> average shape<br>
+                        <input type="checkbox" name="topPriority" value="curvy"> curvy<br>
+                        <input type="checkbox" name="topPriority" value="apple shape"> apple shape<br>
+                        <input type="checkbox" name="topPriority" value="45 and losing my shape"> 45 and losing my shape<br>
+                        <input type="checkbox" name="topPriority" value="55 and gaining belly fat"> 55 and gaining belly fat<br>
+                        <input type="checkbox" name="topPriority" value="severely obese"> severely obese<br>
+                </fieldset>
+            <br>
+        </div>
 
+            <button class="btn btn-success mb-3 mr-6 leftbtn" type="submit">Back
+                <form action="./view8" method="POST"> 
+                    <input type="submit">
+                </form>
+            </button>
+            <button class="btn btn-success mb-3 ml-6 rightbtn" type="submit">Save
+                <form action="./view10" method="POST"> 
+                    <input type="submit">
+                </form>
+            </button>
+        <div class="btn-box"></div>
+        <button class="btn btn-success saveandnext">Save And Next
+            <form action="./view10" method="POST"> 
+                <input type="submit">
+            </form>
+        </button>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>

@@ -188,98 +188,45 @@ li {
   height: 40px;
 }
 
-#containerView1 {
+.containerView {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
   "photo text";
 }
 
-#containerView1Photo {
+.containerViewPhoto {
   grid-area: photo;
   width: 100vmin;
 }
 
-#rightContainerView1 {
+.rightContainerView {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
-#containerView2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "photo text";
-}
-
-#containerView2Photo {
-  grid-area: photo;
-  width: 100vmin;
-}
-
-#rightContainerView2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-#containerView3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "photo text";
-}
-
-#containerView3Photo {
-  grid-area: photo;
-  width: 100vmin;
-}
-
-#rightContainerView3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-#containerView4 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "photo text";
-}
-
-#containerView4Photo {
-  grid-area: photo;
-  width: 100vmin;
-}
-
-#rightContainerView4 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-#text-box {
+.text-box {
   grid-area: text;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#btn-box {
+.btn-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
   "leftbtn rightbtn"
 }
 
-#leftbtn {
+.leftbtn {
   grid-area: leftbtn;
+}
+
+.rightbtn {
+  grid-area: rightbtn;
 }
 
 

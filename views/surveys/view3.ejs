@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 
-<div id="containerView3">
-    <img id="containerView3Photo" src="https://i.imgur.com/9P9idMf.png" alt="doctor standing with thumbs up">
-    <div id="rightContainer3">
-        <div id="text-box3">
+<div class="containerView">
+    <img class="containerViewPhoto" src="https://i.imgur.com/9P9idMf.png" alt="doctor standing with thumbs up">
+    <div class="rightContainer">
+        <div class="text-box">
             <form method="post" action="/surveys/view3">      
                 <fieldset>
                     <legend>Besides shedding unwanted pounds and muscle toning, what is the #1 priority for you?<legend><br>            
@@ -17,18 +17,18 @@
             <br>
         </div>
 
-            <button class="btn btn-success mb-3 mr-6" type="submit" id="leftbtn">Back
+            <button class="btn btn-success mb-3 mr-6 leftbtn" type="submit">Back
                 <form action="./view2" method="POST"> 
                     <input type="submit">
                 </form>
             </button>
-            <button class="btn btn-success mb-3 ml-6" type="submit" id="rightbtn">Save
+            <button class="btn btn-success mb-3 ml-6 rightbtn" type="submit">Save
                 <form action="./view4" method="POST"> 
                     <input type="submit">
                 </form>
             </button>
-        <div id="btn-box"></div>
-        <button class="btn btn-success" id="saveandnext">Save And Next
+        <div class="btn-box"></div>
+        <button class="btn btn-success saveandnext">Save And Next
             <form action="./view4" method="POST"> 
                 <input type="submit">
             </form>

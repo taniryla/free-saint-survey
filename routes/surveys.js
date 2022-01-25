@@ -24,8 +24,38 @@ router.post('/view3', surveysCtrl.view3create)
 // GET /surveys/view4 
 router.get('/view4', surveysCtrl.view4)
 
-// POST /surveys/view3 
+// POST /surveys/view4
 router.post('/view4', surveysCtrl.view4create)
+
+// GET /surveys/view5 
+router.get('/view5', surveysCtrl.view5)
+
+// POST /surveys/view5
+router.post('/view5', surveysCtrl.view5create)
+
+// GET /surveys/view6 
+router.get('/view6', surveysCtrl.view6)
+
+// POST /surveys/view6
+router.post('/view6', surveysCtrl.view6create)
+
+// GET /surveys/view7 
+router.get('/view7', surveysCtrl.view7)
+
+// POST /surveys/view6
+router.post('/view7', surveysCtrl.view7create)
+
+// GET /surveys/view8 
+router.get('/view8', surveysCtrl.view8)
+
+// POST /surveys/view8
+router.post('/view8', surveysCtrl.view8create)
+
+// GET /surveys/view9 
+router.get('/view9', surveysCtrl.view9)
+
+// POST /surveys/view9
+router.post('/view9', surveysCtrl.view9create)
 
 // POST /surveys (handles the new form being submitted)
 router.post('/', surveysCtrl.create);
