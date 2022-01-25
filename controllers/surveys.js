@@ -18,6 +18,8 @@ module.exports = {
   view8create,
   view9,
   view9create,
+  view10,
+  view10create,
   create
 };
 
@@ -140,6 +142,20 @@ function view9create(req, res) {
     if (err) return res.render('surveys/view9');
     console.log(survey);
   res.render(`surveys/view9`, { survey });
+});
+}
+
+function view10(req, res) {
+  res.render('surveys/view10', { surveys });
+}
+
+function view10create(req, res) {
+  const survey = new Survey(req.body);
+  survey.save(function (err) {
+    // one way to handle errors
+    if (err) return res.render('surveys/view10');
+    console.log(survey);
+  res.render(`surveys/view10`, { survey });
 });
 }
 
