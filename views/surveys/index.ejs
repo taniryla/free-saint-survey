@@ -1,18 +1,17 @@
 <%- include('../partials/header') %>
 
 <div class="containerView">
-    <img class="containerViewPhoto" src="https://i.imgur.com/KpAlOXL.png" alt="doctor with blue background">
-    <div class="rightContainerView">
-        <h1>If you want...</h1>
+    <img class="containerViewPhoto float-left" src="https://i.imgur.com/KpAlOXL.png" alt="doctor with blue background">
+    <div class="rightContainerView bg-white jumbotron jumbotron-fluid text-center">
+        <h1 class="container display-4 text-center">If you want...</h1>
         <br>
-        <h3>a beach body that lasts</h3>
-        <br>
-        <button class="continuebtn">Continue  
-            <form action="/surveys/view2" method="POST">
-                <input type="submit"> 
-            </form>
-        </button>
+        <h3 class="lead text-center">a beach body that lasts</h3>
+        <br><br>
+        <form action="/surveys/view2" method="POST">
+            <input style="width: 30vmin;" id="continuebtn" class="btn btn-success btn-lg float-center" type="submit" value="Continue">
+        </form>    
     </div>
 </div>
+
 
 <%- include('../partials/footer') %>

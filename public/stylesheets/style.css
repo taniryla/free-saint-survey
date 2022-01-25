@@ -190,14 +190,14 @@ li {
 
 .containerView {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas: 
   "photo text";
 }
 
 .containerViewPhoto {
   grid-area: photo;
-  width: 100vmin;
+  width: 80vmin;
 }
 
 .rightContainerView {
@@ -215,10 +215,9 @@ li {
 }
 
 .btn-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "leftbtn rightbtn"
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 .leftbtn {
@@ -229,4 +228,58 @@ li {
   grid-area: rightbtn;
 }
 
+// media queries
+ 
+/* Small devices (landscape phones) */
+ 
+@media (min-width: 576px) {        
+
+  .containerView {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+            
+.containerViewPhoto {
+    width: 50vmin;
+}
+       
+}
+ 
+       /* Medium devices (tablets) */
+ 
+       @media (min-width: 768px) {
+           body {
+            background: blue;
+          }
+       }
+ 
+       /* Large devices (desktops) */
+ 
+       @media (min-width: 992px) {
+           body {
+               background: green;
+           }
+       }
+ 
+       /* Extra large devices (large desktops) */
+ 
+       @media (min-width: 1200px) {
+           body {
+
+          }
+       }
+ 
+       /* The given screen size or smaller */
+ 
+       /* Extra small devices (portrait phones)*/
+ 
+       @media (max-width: 575px) {
+           body {
+
+          }
+       }
+ 
 
