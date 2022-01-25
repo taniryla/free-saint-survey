@@ -14,32 +14,23 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/surveys">GET STARTED</a>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HEALTH PROVIDERS</a>
-                <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Add Provider</a>
-                    <a href="#" class="dropdown-item">All Providers</a>
-                </div>
-            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/providers">HEALTH PROVIDERS</a>
+          </li>
             <li class="nav-item">
               <a class="nav-link" href="#">SUPPORT</a>
           </li>
             <% if (user) { %>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HEALTHY RECIPES</a>
-                <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Add Recipe</a>
-                    <a href="#" class="dropdown-item">View All Recipes</a>
-                    <a href="#" class="dropdown-item">Recipe Categories</a>
-                </div>
+              <li class="nav-item active">
+                <a class="nav-link" href="/recipes">HEALTHY RECIPES</a>
             </li>
             <a class="nav-item" href="/logout">LOG OUT</a>
             <% } else { %>
