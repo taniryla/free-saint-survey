@@ -20,6 +20,10 @@ module.exports = {
   view9create,
   view10,
   view10create,
+  view11,
+  view11create,
+  view12,
+  view12create,
   create
 };
 
@@ -156,6 +160,34 @@ function view10create(req, res) {
     if (err) return res.render('surveys/view10');
     console.log(survey);
   res.render(`surveys/view10`, { survey });
+});
+}
+
+function view11(req, res) {
+  res.render('surveys/view11', { surveys });
+}
+
+function view11create(req, res) {
+  const survey = new Survey(req.body);
+  survey.save(function (err) {
+    // one way to handle errors
+    if (err) return res.render('surveys/view11');
+    console.log(survey);
+  res.render(`surveys/view11`, { survey });
+});
+}
+
+function view12(req, res) {
+  res.render('surveys/view12', { surveys });
+}
+
+function view12create(req, res) {
+  const survey = new Survey(req.body);
+  survey.save(function (err) {
+    // one way to handle errors
+    if (err) return res.render('surveys/view12');
+    console.log(survey);
+  res.render(`surveys/view12`, { survey });
 });
 }
 

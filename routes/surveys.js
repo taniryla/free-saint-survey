@@ -63,6 +63,18 @@ router.get('/view10', surveysCtrl.view10)
 // POST /surveys/view10
 router.post('/view10', surveysCtrl.view10create)
 
+// GET /surveys/view11 
+router.get('/view11', surveysCtrl.view11)
+
+// POST /surveys/view11
+router.post('/view11', surveysCtrl.view11create)
+
+// GET /surveys/view12 
+router.get('/view12', surveysCtrl.view12)
+
+// POST /surveys/view12
+router.post('/view12', surveysCtrl.view12create)
+
 // POST /surveys (handles the new form being submitted)
 router.post('/', surveysCtrl.create);
 

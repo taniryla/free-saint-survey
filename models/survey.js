@@ -47,13 +47,13 @@ const surveySchema = new Schema({
         type: Number,
         required: true
     }, 
-    bmi: {
+    targetWeight: {
         type: Number,
         required: true
     }, 
     pregnant: {
         type: Boolean,
-        required: true
+        required: true,
     }, 
     age: {
         type: Number,
