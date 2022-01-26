@@ -15,8 +15,9 @@ router.get('/view2', isLoggedIn, surveysCtrl.view2)
 // POST /surveys/view2 
 router.post('/view2', isLoggedIn, surveysCtrl.view2create)
 
-// GET /surveys/view3 
+// GET /surveys/view3
 router.get('/view3', isLoggedIn, surveysCtrl.view3)
+
 
 // POST /surveys/view3 
 router.post('/view3', isLoggedIn, surveysCtrl.view3create)
@@ -30,8 +31,8 @@ router.post('/view4/:id', isLoggedIn, surveysCtrl.view4create)
 // GET /surveys/view5 
 router.get('/view5', surveysCtrl.view5)
 
-// POST /surveys/view5
-router.post('/view5', surveysCtrl.view5create)
+// POST /surveys/view5/:id
+router.post('/view5/:id', surveysCtrl.view5create)
 
 // GET /surveys/view6 
 router.get('/view6', surveysCtrl.view6)
@@ -72,11 +73,6 @@ router.post('/view11', surveysCtrl.view11create)
 // GET /surveys/view12 
 router.get('/view12', surveysCtrl.view12)
 
-// POST /surveys/view12
-router.post('/view12', surveysCtrl.view12create)
-
-// POST /surveys (handles the new form being submitted)
-router.post('/', surveysCtrl.create);
 
 
 

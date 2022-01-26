@@ -15,7 +15,7 @@ const surveySchema = new Schema({
     },
     hormonestatus: {
         type: String,
-        required: true, 
+        required: true,
         enum: ['not using any hormones', 'birth control for pregnancy', 'birth control for symptoms', 'progesterone only', 'I take HRT/estrogen', 'I take TRT/testosterone']
     },
     healthrisks1: {
@@ -42,30 +42,30 @@ const surveySchema = new Schema({
     height: {
         type: Number,
         required: true
-    }, 
+    },
     weight: {
         type: Number,
         required: true
-    }, 
+    },
     targetweight: {
         type: Number,
         required: true
-    }, 
+    },
     pregnant: {
         type: Boolean,
         required: true,
-    }, 
+    },
     age: {
         type: Number,
         required: true
-    }, 
-    userId: {
+    },
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     }
 }, {
-        // will add and maintain createdAt and updatedAt properties
-        timestamps: true
-    });
+    // will add and maintain createdAt and updatedAt properties
+    timestamps: true
+});
 
 module.exports = mongoose.model('Survey', surveySchema);
