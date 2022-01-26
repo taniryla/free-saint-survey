@@ -37,6 +37,7 @@ body>main h1:first-child {
 
 #new-provider-form *,
 #new-recipe-form *,
+#providers-show-page *,
 #add-review-form *,
 #add-comment-form *,
 #add-performer-form * {
@@ -120,6 +121,7 @@ table td {
     font-weight: bold;
 }
 
+#providers-show-page,
 #add-review-form,
 #add-comment-form {
     display: grid;
@@ -128,6 +130,7 @@ table td {
     margin-bottom: 2rem;
 }
 
+#providers-show-page[type="submit"],
 #add-review-form input[type="submit"],
 #add-performer-form input[type="submit"] {
     width: 10rem;
@@ -244,6 +247,14 @@ li {
 
 #googlereq {
     font-size: 2vmin;
+}
+
+#reviewh2,
+#reviewlayout,
+#add-review-form,
+#comment-user,
+#providers-show-page {
+    margin-left: 20vmin;
 }
 
 
