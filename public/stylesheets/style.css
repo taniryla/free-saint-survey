@@ -228,7 +228,7 @@ li {
   grid-area: rightbtn;
 }
 
-// media queries
+/* // media queries */
  
 /* Small devices (landscape phones) */
  
@@ -252,7 +252,8 @@ li {
  
        @media (min-width: 768px) {
            body {
-            background: blue;
+            /* background: blue; */
+            background: white;
           }
        }
  
@@ -260,7 +261,9 @@ li {
  
        @media (min-width: 992px) {
            body {
-               background: green;
+               /* background: green; */
+               background: white;
+
            }
        }
  
@@ -268,7 +271,8 @@ li {
  
        @media (min-width: 1200px) {
            body {
-
+            /* background: pink; */
+            background: white;
           }
        }
  
@@ -278,7 +282,8 @@ li {
  
        @media (max-width: 575px) {
            body {
-
+            /* background: yellow; */
+            background: white;
           }
        }
  

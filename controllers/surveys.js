@@ -38,7 +38,7 @@ function index(req, res) {
 }
 
 function view2(req, res) {
-  res.render('surveys/view2', { surveys });
+  res.render('/surveys/view2');
 }
 
 function view2create(req, res) {
@@ -60,7 +60,7 @@ function view3create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view3');
-    console.log(survey);
+    console.log(req.body.toppriorities);
   res.render(`surveys/view3`, { survey });
 });
 }
@@ -74,7 +74,7 @@ function view4create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view4');
-    console.log(survey);
+    console.log(req.body.sexgender);
   res.render(`surveys/view4`, { survey });
 });
 }
@@ -88,7 +88,7 @@ function view5create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view5');
-    console.log(survey);
+    console.log(req.body.hormonestatus);
   res.render(`surveys/view5`, { survey });
 });
 }
@@ -102,7 +102,7 @@ function view6create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view6');
-    console.log(survey);
+    console.log(req.body.healthrisks1);
   res.render(`surveys/view6`, { survey });
 });
 }
@@ -116,7 +116,7 @@ function view7create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view7');
-    console.log(survey);
+    console.log(req.body.healthrisks2);
   res.render(`surveys/view7`, { survey });
 });
 }
@@ -130,7 +130,7 @@ function view8create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view8');
-    console.log(survey);
+    console.log(req.body.topbarrier);
   res.render(`surveys/view8`, { survey });
 });
 }
@@ -144,7 +144,7 @@ function view9create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view9');
-    console.log(survey);
+    console.log(req.body.bodyshape);
   res.render(`surveys/view9`, { survey });
 });
 }
@@ -158,7 +158,9 @@ function view10create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view10');
-    console.log(survey);
+    console.log(req.body.height);
+    console.log(req.body.weight);
+    console.log(req.body.targetweight);
   res.render(`surveys/view10`, { survey });
 });
 }
@@ -172,7 +174,8 @@ function view11create(req, res) {
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view11');
-    console.log(survey);
+    console.log(req.body.pregnant);
+    console.log(req.body.age);
   res.render(`surveys/view11`, { survey });
 });
 }

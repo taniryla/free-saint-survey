@@ -2,27 +2,19 @@
 
 <section id="recipes-show-page">
   <div>Recipe Name: </div>
-  <div><%= recipe.recipeName %></div>
+  <div><%= recipe.recipe %></div>
   <div>Email: </div>
   <div><%= recipe.email %></div>
   <div>Description: </div>
   <div><%= recipe.description %></div>
   <div>Recipe Category: </div>
-  <div><%= recipe.recipeCategory %></div>
+  <div><%= recipe.category %></div>
   <br><br>    
-    <img src="" alt="<%= recipe.recipeName %>"> 
+    <img src="" alt="<%= recipe.recipe %>"> 
   <!-- ask Jim how to add the photos for this project-->
   <div>Recipe Text: </div>
-  <div><%= recipe.recipeText %></div>
+  <div><%= recipe.text %></div>
 </section>
-<form id="add-recipe-comment" action="/recipes/<%= recipe._id %>/new"  method="POST">
-  <select name="comments">
-    <%- recipe.map(r => %>
-      `<option value="${r._id}">${r.name}</option>`
-      <% ).join('') %>
-  </select>
-  <button type="submit">Add Comment</button>
-</form>
 
 <!-- subdocument Comments -->
 
@@ -31,7 +23,7 @@
   <form id="add-comment-form" method="POST"
     action="/recipes/<%= recipe._id %>/comments">
     <label>Comment:</label>
-    <textarea name="textComments"></textarea>
+    <textarea name="text"></textarea>
     <input type="submit" value="Add Comment">
   </form>
 <% } %>
@@ -40,7 +32,6 @@
   <table>
     <thead>
         
-          <% total += p.count %> 
           <!-- double check this count -->
       <tr>
         <th>User</th>
@@ -54,7 +45,7 @@
         <tr>
           <td class="comment-user"><img alt="avatarComment" src="<%= r.userAvatar %>"><%= r.userName %></td>
           <td><%= r.createdAt.toLocaleDateString() %></td>
-          <td><%= r.textComments %></td>
+          <td><%= r.text %></td>
           <td>
             <% if (user && user._id.equals(r.user)) { %>
               <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">

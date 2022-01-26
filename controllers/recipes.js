@@ -28,7 +28,7 @@ function show(req, res){
     };
 
 
-function create() {
+function create(req, res) {
   var recipe = new Recipe(req.body);
   recipe.save(function (err) {
     // one way to handle errors
