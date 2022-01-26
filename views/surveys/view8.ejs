@@ -3,67 +3,29 @@
     <div class="containerview">
         <img class="containerviewphoto float-left" src="https://i.imgur.com/yX7IJDr.png" alt="doctor at desk">
         <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
-            <div class="text-box">
-                <form method="post" action="/surveys/view8">
+            <div class="text-box container display-4 text-center">
+                <form method="POST" action="/surveys/view8/<%= surveyId %>">
                     <fieldset>
-                        <legend>What's the #1 barrier preventing you from exercising as much as you need too?
+                        <legend style="font-size: 1.3rem;" class="text-center form-check">What's the #1 barrier preventing you from exercising as much as you need too?
                             <legend><br>
-                                <input type="checkbox" name="topbarrier" value="busy schedule"> busy schedule<br>
-                                <input type="checkbox" name="topbarrier" value="injury/medical condition"> injury/medical condition<br>
-                                <input type="checkbox" name="topbarrier" value="low energy"> low energy<br>
-                                <input type="checkbox" name="topbarrier" value="nothing works"> nothing works<br>
-                                <input type="checkbox" name="topbarrier" value="plateau"> plateau<br>
-                                <input type="checkbox" name="topbarrier" value="not a challenge"> not a challenge<br>
+                                <input class="form-check-input" type="checkbox" name="topbarrier" value="busy schedule"> busy schedule<br>
+                                <input class="form-check-input" type="checkbox" name="topbarrier" value="injury/medical condition"> injury/medical condition<br>
+                                <input class="form-check-input" type="checkbox" name="topbarrier" value="low energy"> low energy<br>
+                                <input class="form-check-input" type="checkbox" name="topbarrier" value="nothing works"> nothing works<br>
+                                <input class="form-check-input" type="checkbox" name="topbarrier" value="plateau"> plateau<br>
+                                <input class="form-check-input" type="checkbox" name="topbarrier" value="not a challenge"> not a challenge<br>
                     </fieldset>
-                    <br>
+                    <input type="submit" style="width: 50vmin;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
             </div>
-
-            <button class="btn btn-success mb-3 mr-6 leftbtn" type="submit">Back
-                <form action="./view7" method="POST"> 
-                    <input type="submit">
+            <div class="btn-box">
+                <form action="/surveys/view7" method="POST">
+                    <input type="submit" type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
                 </form>
-            </button>
-            <button class="btn btn-success mb-3 ml-6 rightbtn" type="submit">Save
-                <form action="./view9" method="POST"> 
-                    <input type="submit">
+                <form action="/surveys/view9/<%= surveyId %>" method="POST ">
+                    <input type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center ml-3 mt-2" value="Next">
                 </form>
-            </button>
-            <div class="btn-box"></div>
-            <button class="btn btn-success saveandnext">Save And Next
-            <form action="./view9" method="POST"> 
-                <input type="submit">
-            </form>
-        </button>
+            </div>
         </div>
     </div>
 
     <%- include('../partials/footer') %>
-
-
-        <div class="text-box container display-4 text-center">
-            <form method="POST" action="/surveys/view7/<%= surveyId %>">
-                <fieldset>
-                    <legend style="font-size: 1.3rem;" class="text-center form-check">Are you at risk for the following? (Continued from last screen)
-                        <legend><br>
-                            <input class="form-check-input" type="checkbox" name="healthrisks2" value="kidney disease"> kidney disease<br>
-                            <input class="form-check-input" type="checkbox" name="healthrisks2" value="osteoarthritis"> osteoarthritis<br>
-                            <input class="form-check-input" type="checkbox" name="healthrisks2" value="depression"> depression<br>
-                            <input class="form-check-input" type="checkbox" name="healthrisks2" value="insomnia"> insomnia<br>
-                            <input class="form-check-input" type="checkbox" name="healthrisks2" value="none"> none<br>
-                            <input class="form-check-input" type="checkbox" name="healthrisks2" value="other (write below)"> other (write below)<br><br>
-                            <div class="form-group">
-                                <textarea class="form-control" name="healthriskswritebelow" cols="30" rows="10"></textarea>
-                            </div>
-                </fieldset>
-                <input type="submit" style="width: 50vmin;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
-        </div>
-        <div class="btn-box">
-            <form action="/surveys/view6" method="POST">
-                <input type="submit" type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
-            </form>
-            <form action="/surveys/view8/<%= surveyId %>" method="POST ">
-                <input type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center ml-3 mt-2" value="Next">
-            </form>
-        </div>
-        </div>
-        </div>

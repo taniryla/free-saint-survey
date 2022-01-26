@@ -238,6 +238,10 @@ li {
     gap: 0.5vh 150vh;
 }
 
+.pregnant {
+    font-size: 4vmin;
+}
+
 #googlereq {
     font-size: 2vmin;
 }

@@ -1,39 +1,31 @@
 <%- include('../partials/header') %>
 
-<div class="containerview">
-    <img class="containerviewphoto" src="https://i.imgur.com/qHuaV6P.png" alt="doctor with xrays">
-    <div class="rightcontainer">
-        <div class="text-box">
-            <form method="post" action="/surveys/view9">      
-                <fieldset>
-                    <legend>What best describes your body shape?<legend><br>            
-                        <input type="checkbox" name="bodyshape" value="curvy"> curvy<br>
-                        <input type="checkbox" name="bodyshape" value="apple shape"> apple shape<br>
-                        <input type="checkbox" name="bodyshape" value="average shape"> average shape<br>
-                        <input type="checkbox" name="bodyshape" value="45 and losing my shape"> 45 and losing my shape<br>
-                        <input type="checkbox" name="bodyshape" value="55 and gaining belly fat"> 55 and gaining belly fat<br>
-                        <input type="checkbox" name="bodyshape" value="severely obese"> severely obese<br>
-                </fieldset>
-            <br>
+    <div class="containerview">
+        <img class="containerviewphoto float-left" src="https://i.imgur.com/qHuaV6P.png" alt="doctor with xrays">
+        <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
+            <div class="text-box container display-4 text-center">
+                <form method="POST" action="/surveys/view9/<%= surveyId %>">
+                    <fieldset>
+                        <legend style="font-size: 1.3rem;" class="text-center form-check">What best describes your body shape?
+                            <legend><br>
+                                <input class="form-check-input" type="checkbox" name="bodyshape" value="curvy"> curvy<br>
+                                <input class="form-check-input" type="checkbox" name="bodyshape" value="apple shape"> apple shape<br>
+                                <input class="form-check-input" type="checkbox" name="bodyshape" value="average shape"> average shape<br>
+                                <input class="form-check-input" type="checkbox" name="bodyshape" value="45 and losing my shape"> 45 and losing my shape<br>
+                                <input class="form-check-input" type="checkbox" name="bodyshape" value="55 and gaining belly fat"> 55 and gaining belly fat<br>
+                                <input class="form-check-input" type="checkbox" name="bodyshape" value="severely obese"> severely obese<br>
+                    </fieldset>
+                    <input type="submit" style="width: 50vmin;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
+            </div>
+            <div class="btn-box">
+                <form action="/surveys/view8" method="POST">
+                    <input type="submit" type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
+                </form>
+                <form action="/surveys/view10/<%= surveyId %>" method="POST ">
+                    <input type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center ml-3 mt-2" value="Next">
+                </form>
+            </div>
         </div>
-
-            <button class="btn btn-success mb-3 mr-6 leftbtn" type="submit">Back
-                <form action="./view8" method="POST"> 
-                    <input type="submit">
-                </form>
-            </button>
-            <button class="btn btn-success mb-3 ml-6 rightbtn" type="submit">Save
-                <form action="./view10" method="POST"> 
-                    <input type="submit">
-                </form>
-            </button>
-        <div class="btn-box"></div>
-        <button class="btn btn-success saveandnext">Save And Next
-            <form action="./view10" method="POST"> 
-                <input type="submit">
-            </form>
-        </button>
     </div>
-</div>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

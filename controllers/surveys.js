@@ -110,7 +110,7 @@ function view8(req, res) {
 function view8create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view9/${survey._id}`);
+        res.redirect(`/surveys/view9/${req.params.id}`);
     });
 }
 
@@ -121,7 +121,7 @@ function view9(req, res) {
 function view9create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view10/${survey._id}`);
+        res.redirect(`/surveys/view10/${req.params.id}`);
     });
 }
 
@@ -132,7 +132,7 @@ function view10(req, res) {
 function view10create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view11/${survey._id}`);
+        res.redirect(`/surveys/view11/${req.params.id}`);
     });
 }
 
@@ -143,7 +143,7 @@ function view11(req, res) {
 function view11create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view12/${survey._id}`);
+        res.redirect(`/surveys/view12/${req.params.id}`);
     });
 }
 
