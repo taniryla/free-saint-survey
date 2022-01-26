@@ -1,17 +1,20 @@
 <%- include('../partials/header') %>
 
-<div class="containerview">
-    <img class="containerviewphoto float-left" src="https://i.imgur.com/KpAlOXL.png" alt="doctor with blue background">
-    <div class="rightcontainerview bg-white jumbotron jumbotron-fluid text-center">
-        <h1 class="container display-4 text-center">If you want...</h1>
-        <br>
-        <h3 class="lead text-center">a beach body that lasts</h3>
-        <br><br>
-        <form action="/surveys/view2" method="POST">
-            <input style="width: 30vmin;" id="continuebtn" class="btn btn-success btn-lg float-center" type="submit" value="Continue">
-        </form>    
+    <div class="containerview">
+        <img class="containerviewphoto float-left" src="https://i.imgur.com/KpAlOXL.png" alt="doctor with blue background">
+        <div class="rightcontainerview bg-white jumbotron jumbotron-fluid text-center">
+            <h1 class="container display-4 text-center">If you want...</h1>
+            <br>
+            <h3 class="lead text-center">a beach body that lasts</h3><br>
+            <br>
+            <form id="firstpage" action="/surveys/view2" method="POST">
+                <input style="width: 30vmin;" id="continuebtn" class="btn btn-success btn-lg float-center" type="submit" value="Continue">
+                <h5 id="googlereq" class="alert alert-warning text-muted lead float-center mt-4" style="width: 40vmin;"><b><em>(Google login required...)</em></b></h5>
+            </form>
+            <br>
+        </div>
     </div>
-</div>
 
 
-<%- include('../partials/footer') %>
+
+    <%- include('../partials/footer') %>

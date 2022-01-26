@@ -10,22 +10,22 @@ var isLoggedIn = require('../config/auth');
 router.get('/', surveysCtrl.index);
 
 // GET /surveys/view2 
-router.get('/view2', surveysCtrl.view2)
+router.get('/view2', isLoggedIn, surveysCtrl.view2)
 
 // POST /surveys/view2 
-router.post('/view2', surveysCtrl.view2create)
+router.post('/view2', isLoggedIn, surveysCtrl.view2create)
 
 // GET /surveys/view3 
-router.get('/view3', surveysCtrl.view3)
+router.get('/view3', isLoggedIn, surveysCtrl.view3)
 
 // POST /surveys/view3 
-router.post('/view3', surveysCtrl.view3create)
+router.post('/view3', isLoggedIn, surveysCtrl.view3create)
 
-// GET /surveys/view4 
-router.get('/view4', surveysCtrl.view4)
+// GET /surveys/view4/:id
+router.get('/view4/:id', isLoggedIn, surveysCtrl.view4)
 
-// POST /surveys/view4
-router.post('/view4', surveysCtrl.view4create)
+// POST /surveys/view4/:id
+router.post('/view4/:id', isLoggedIn, surveysCtrl.view4create)
 
 // GET /surveys/view5 
 router.get('/view5', surveysCtrl.view5)

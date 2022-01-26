@@ -42,41 +42,34 @@ function view2(req, res) {
 }
 
 function view2create(req, res) {
-  const survey = new Survey(req.body);
-  survey.save(function (err) {
-    // one way to handle errors
-    if (err) return res.render('surveys/view2');
-    console.log(survey);
-  res.render(`surveys/view2`, { survey });
-});
-}
+  res.render(`surveys/view2`);
+};
+
 
 function view3(req, res) {
-  res.render('surveys/view3');
+  res.render('surveys/view2');
 }
 
 function view3create(req, res) {
-  const survey = new Survey(req.body);
+  const survey = new Survey(req.body); // one and done
+  survey.userId = req.user._id; // one and done
   survey.save(function (err) {
     // one way to handle errors
     if (err) return res.render('surveys/view3');
     console.log(req.body.toppriorities);
-  res.render(`surveys/view3`, { survey });
-});
+    res.redirect(`/surveys/view4/${survey._id}`);
+  });
 }
 
 function view4(req, res) {
-  res.render('surveys/view4', { surveys });
+  res.render('surveys/view4', { surveyId: req.params.id });
 }
 
 function view4create(req, res) {
-  const survey = new Survey(req.body);
-  survey.save(function (err) {
-    // one way to handle errors
-    if (err) return res.render('surveys/view4');
-    console.log(req.body.sexgender);
-  res.render(`surveys/view4`, { survey });
-});
+  Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
+    console.log(survey);
+    res.redirect(`/surveys/view5/${survey._id}`);
+  });
 }
 
 function view5(req, res) {

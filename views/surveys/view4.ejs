@@ -4,7 +4,7 @@
     <img class="containerviewphoto" src="https://i.imgur.com/dBDM8Ly.png" alt="doctor in lab">
     <div class="rightcontainer">
         <div class="text-box">
-            <form method="post" action="/surveys/view4">      
+            <form method="post" action="/surveys/view4/<%= surveyId %>">      
                 <fieldset>
                     <legend>Our sex and hormones are quite possibly the most underrated factor in losing weight. What sex best describes you?<legend><br>            
                         <input type="checkbox" name="sexgender" value="male"> male<br>
@@ -16,6 +16,8 @@
                         <input type="checkbox" name="sexgender" value="asexual"> asexual<br>
                         <input type="checkbox" name="sexgender" value="prefer not to say"> prefer not to say<br>
                 </fieldset>
+                <input type="submit" style="width: 50vmin;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
+            </form>
             <br>
         </div>
 
