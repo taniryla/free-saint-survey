@@ -22,56 +22,56 @@ router.get('/view3', isLoggedIn, surveysCtrl.view3)
 // POST /surveys/view3 
 router.post('/view3', isLoggedIn, surveysCtrl.view3create)
 
-// GET /surveys/view4/:id
+// GET /surveys/view4/
 router.get('/view4/:id', isLoggedIn, surveysCtrl.view4)
 
 // POST /surveys/view4/:id
 router.post('/view4/:id', isLoggedIn, surveysCtrl.view4create)
 
 // GET /surveys/view5 
-router.get('/view5', surveysCtrl.view5)
+router.get('/view5/:id', isLoggedIn, surveysCtrl.view5)
 
 // POST /surveys/view5/:id
-router.post('/view5/:id', surveysCtrl.view5create)
+router.post('/view5/:id', isLoggedIn, surveysCtrl.view5create)
 
 // GET /surveys/view6 
-router.get('/view6', surveysCtrl.view6)
+router.get('/view6/:id', isLoggedIn, surveysCtrl.view6)
 
 // POST /surveys/view6
-router.post('/view6', surveysCtrl.view6create)
+router.post('/view6/:id', isLoggedIn, surveysCtrl.view6create)
 
 // GET /surveys/view7 
-router.get('/view7', surveysCtrl.view7)
+router.get('/view7/:id', isLoggedIn, surveysCtrl.view7)
 
 // POST /surveys/view6
-router.post('/view7', surveysCtrl.view7create)
+router.post('/view7/:id', isLoggedIn, surveysCtrl.view7create)
 
 // GET /surveys/view8 
-router.get('/view8', surveysCtrl.view8)
+router.get('/view8', isLoggedIn, surveysCtrl.view8)
 
 // POST /surveys/view8
-router.post('/view8', surveysCtrl.view8create)
+router.post('/view8', isLoggedIn, surveysCtrl.view8create)
 
 // GET /surveys/view9 
-router.get('/view9', surveysCtrl.view9)
+router.get('/view9', isLoggedIn, surveysCtrl.view9)
 
 // POST /surveys/view9
-router.post('/view9', surveysCtrl.view9create)
+router.post('/view9', isLoggedIn, surveysCtrl.view9create)
 
 // GET /surveys/view10 
-router.get('/view10', surveysCtrl.view10)
+router.get('/view10', isLoggedIn, surveysCtrl.view10)
 
 // POST /surveys/view10
-router.post('/view10', surveysCtrl.view10create)
+router.post('/view10', isLoggedIn, surveysCtrl.view10create)
 
 // GET /surveys/view11 
-router.get('/view11', surveysCtrl.view11)
+router.get('/view11', isLoggedIn, surveysCtrl.view11)
 
 // POST /surveys/view11
-router.post('/view11', surveysCtrl.view11create)
+router.post('/view11', isLoggedIn, surveysCtrl.view11create)
 
 // GET /surveys/view12 
-router.get('/view12', surveysCtrl.view12)
+router.get('/view12', isLoggedIn, surveysCtrl.view12)
 
 
 

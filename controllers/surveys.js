@@ -52,11 +52,9 @@ function view3(req, res) {
 
 function view3create(req, res) {
     const survey = new Survey(req.body);
-    // Add the user-centric info to req.body
     console.log(survey);
     survey.user = req.user._id;
     survey.save(function(err) {
-        // Step 5: Respond with a redirect because we've mutated data
         res.redirect(`/surveys/view4/${survey._id}`);
     });
 }
@@ -68,45 +66,45 @@ function view4(req, res) {
 function view4create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view5/${survey._id}`);
+        res.redirect(`/surveys/view5/${ survey._id }`);
     });
 }
 
 function view5(req, res) {
-
+    res.render('surveys/view5', { surveyId: req.params.id });
 }
 
 function view5create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view6/${survey._id}`);
+        res.redirect(`/surveys/view6/${req.params.id}`);
     });
 }
 
 function view6(req, res) {
-    res.redirect('/surveys/view6');
+    res.render('surveys/view6', { surveyId: req.params.id });
 }
 
 function view6create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view7/${survey._id}`);
+        res.redirect(`/surveys/view7/${req.params.id}`);
     });
 }
 
 function view7(req, res) {
-    res.redirect('/surveys/view7');
+    res.render('surveys/view7', { surveyId: req.params.id });
 }
 
 function view7create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view8/${survey._id}`);
+        res.redirect(`/surveys/view8/${req.params.id}}`);
     });
 }
 
 function view8(req, res) {
-    res.redirect('/surveys/view8');
+    res.render('surveys/view8', { surveyId: req.params.id });
 }
 
 function view8create(req, res) {
@@ -117,7 +115,7 @@ function view8create(req, res) {
 }
 
 function view9(req, res) {
-    res.redirect('/surveys/view9');
+    res.render('surveys/view9', { surveyId: req.params.id });
 }
 
 function view9create(req, res) {
@@ -128,7 +126,7 @@ function view9create(req, res) {
 }
 
 function view10(req, res) {
-    res.redirect('/surveys/view10');
+    res.render('surveys/view10', { surveyId: req.params.id });
 }
 
 function view10create(req, res) {
@@ -139,7 +137,7 @@ function view10create(req, res) {
 }
 
 function view11(req, res) {
-    res.redirect('/surveys/view11');
+    res.render('surveys/view11', { surveyId: req.params.id });
 }
 
 function view11create(req, res) {
@@ -150,5 +148,5 @@ function view11create(req, res) {
 }
 
 function view12(req, res) {
-    res.redirect('/surveys/view12');
+    res.render('surveys/view12', { surveyId: req.params.id });
 }

@@ -1,45 +1,37 @@
 <%- include('../partials/header') %>
 
-<div class="containerview">
-    <img class="containerviewphoto" src="https://i.imgur.com/mWNvFsn.png" alt="doctor with too much paperwork">
-    <div class="rightcontainer">
-        <div class="text-box">
-            <form method="post" action="/surveys/view6">      
-                <fieldset>
-                    <legend>Are you at risk for the following?<legend><br>            
-                        <input type="checkbox" name="healthrisks1" value="heart disease or stroke"> heart disease or stroke<br>
-                        <input type="checkbox" name="healthrisks1" value="heavy/polyps"> heavy/polyps <br>
-                        <input type="checkbox" name="healthrisks1" value="endometriosis"> endometriosis<br>
-                        <input type="checkbox" name="healthrisks1" value="severe pms"> severe pms<br>
-                        <input type="checkbox" name="healthrisks1" value="pcos or progesterone"> pcos or progesterone<br>
-                        <input type="checkbox" name="healthrisks1" value="partial hysterectomy"> partial hysterectomy<br>
-                        <input type="checkbox" name="healthrisks1" value="full hysterectomy"> full hysterectomy<br>
-                        <input type="checkbox" name="healthrisks1" value="high blood pressure"> high blood pressure<br>
-                        <input type="checkbox" name="healthrisks1" value="diabetes"> diabetes<br>
-                        <input type="checkbox" name="healthrisks1" value="menopause"> menopause<br>
-                        <input type="checkbox" name="healthrisks1" value="nash"> nash<br>
-                        <input type="checkbox" name="healthrisks1" value="high cholesterol"> high cholesterol<br>
-                </fieldset>
-            <br>
+    <div class="containerview">
+        <img class="containerviewphoto float-left" src="https://i.imgur.com/mWNvFsn.png" alt="doctor with too much paperwork">
+        <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
+            <div class="text-box container display-4 text-center">
+                <form method="POST" action="/surveys/view6/<%= surveyId %>">
+                    <fieldset>
+                        <legend style="font-size: 1.3rem;" class="text-center form-check">Are you at risk for the following?
+                            <legend><br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="heart disease or stroke"> heart disease or stroke<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="heavy/polyps"> heavy/polyps <br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="endometriosis"> endometriosis<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="severe pms"> severe pms<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="pcos or progesterone"> pcos or progesterone<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="partial hysterectomy"> partial hysterectomy<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="full hysterectomy"> full hysterectomy<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="high blood pressure"> high blood pressure<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="diabetes"> diabetes<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="menopause"> menopause<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="nash"> nash<br>
+                                <input class="form-check-input" type="checkbox" name="healthrisks1" value="high cholesterol"> high cholesterol<br>
+                    </fieldset>
+                    <input type="submit" style="width: 50vmin;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
+            </div>
+            <div class="btn-box">
+                <form action="/surveys/view5" method="POST">
+                    <input type="submit" type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
+                </form>
+                <form action="/surveys/view7/<%= surveyId %>" method="POST ">
+                    <input type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center ml-3 mt-2" value="Next">
+                </form>
+            </div>
         </div>
-
-            <button class="btn btn-success mb-3 mr-6 leftbtn" type="submit">Back
-                <form action="./view5" method="POST"> 
-                    <input type="submit">
-                </form>
-            </button>
-            <button class="btn btn-success mb-3 ml-6 rightbtn" type="submit">Save
-                <form action="./view7" method="POST"> 
-                    <input type="submit">
-                </form>
-            </button>
-        <div class="btn-box"></div>
-        <button class="btn btn-success saveandnext">Save And Next
-            <form action="./view7" method="POST"> 
-                <input type="submit">
-            </form>
-        </button>
     </div>
-</div>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
