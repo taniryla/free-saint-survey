@@ -8,13 +8,13 @@ var isLoggedIn = require('../config/auth');
 // GET /providers (displays all providers)
 router.get('/', providersCtrl.index);
 
-// GET /providers/new (display a form for entering a new provider)
+// GET /providers/new (route entering a new provider)
 router.get('/new', providersCtrl.new);
 
-// GET /providers/:id (display a "show" page for a single provider)
+// GET /providers/:id (route a "show" page for a single provider)
 router.get('/:id', providersCtrl.show);
 
-// POST /providers (handles the new form being submitted)
+// POST /providers (routes the new form being submitted)
 router.post('/', providersCtrl.create);
 
 

@@ -6,23 +6,20 @@
             <%= provider.name %>
         </div>
         <div>Service: </div>
-        <select name="service" style="width: 40vmin;">
-    <option value="endocrinologist">Endocrinologist</option>
-    <option value="healthCoach">Health Coach</option>
-    <option value="nutritionist">Nutritionist</option>
-    <option value="accupunturist">Accupunturist</option>
-    <option value="personalTrainer" >Personal Trainer</option>
-    <option value="embodiment" >Embodiment Coach</option>
-    <option value="sleepExpert" >Sleep Expert</option>
-  </select>
-        <div>Email: </div>
         <div>
-            <%= provider.email %>
+            <%= provider.service %>
+        </div>
+        <div>Website: </div>
+        <div>
+            <%= provider.url %>
         </div>
         <div>Address: </div>
         <section>
             <div>
-                <%= provider.address.street %>
+                <%= provider.address.street1 %>
+            </div>
+            <div>
+                <%= provider.address.street2 %>
             </div>
             <div>
                 <%= provider.address.city %>
@@ -32,7 +29,7 @@
             </div>
             <div>
                 <%= provider.address.zip %>
-            </div>
+            </div><br>
             <form method="GET" action="/providers/new">
                 <input style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg float-center">
             </form>
@@ -45,20 +42,20 @@
     <!-- subdocument Reviews -->
 
     <br><br>
-    <h2 id="reviewh2">Reviews</h2><br>
+    <h2 id="reviewh2">Reviews</h2><br><br>
     <% if (user) { %>
         <form id="add-review-form" method="POST" action="/providers/<%= provider._id %>/reviews">
             <label>Review:</label>
             <textarea name="text" style="width: 40vmin;"></textarea>
             <label>Rating:</label>
-            <select name="rating" style="width: 40vmin;">
+            <select class="mt-4" name="rating" style="width: 40vmin;">
               <option value="1">1-Star 🌟</option>
               <option value="2">2-Star 🌟🌟</option>
               <option value="3">3-Star 🌟🌟🌟 </option>
               <option value="4">4-Star 🌟🌟🌟🌟</option>
               <option value="5" selected>5-Star 🌟🌟🌟🌟🌟</option>
-            </select><br>
-            <input style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add Review" class="btn btn-success btn-lg float-center">
+            </select><br><br>
+            <input style="width: 40vmin; font-size: medium; text-align: center;" type="submit" value="Add Review" class="btn btn-success btn-lg float-center mt-4">
         </form>
         <% } %>
 

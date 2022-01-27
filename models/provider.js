@@ -36,15 +36,13 @@ const providerSchema = new Schema({
         required: true,
         enum: ['Endocrinologist', 'Nutritionist', 'Health Coach', 'Accupunturist', 'Personal Trainer', 'Embodiment Coach', 'Sleep Expert']
     },
-    email: String,
+    url: String,
     address: {
         street1: String,
         street2: String,
         city: String,
         state: {
             type: String,
-            uppercase: true,
-            required: true,
             enum: statesArray
         },
         zip: Number

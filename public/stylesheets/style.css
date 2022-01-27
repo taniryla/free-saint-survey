@@ -331,6 +331,13 @@ li {
         margin-right: auto;
         width: 50%;
     }
+    #providers-show-page {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
 }
 
 
