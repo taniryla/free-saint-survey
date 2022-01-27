@@ -9,7 +9,6 @@ var passport = require('passport');
 var multer = require('multer');
 var qs = require('qs');
 
-
 require('dotenv').config();
 // Connect to the MongoDB database
 require('./config/database');
