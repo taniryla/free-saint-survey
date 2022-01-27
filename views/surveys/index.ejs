@@ -6,6 +6,11 @@
             <h1 id="bayshore" class="container display-4 text-center">If you want...</h1>
             <br>
             <h3 id="beachbody" class="text-center">a beach body that lasts</h3><br>
+            <br>
+            <form id="firstpage" action="/surveys/view2" method="POST">
+
+                <input style="width: 50vmin; font-size: medium; text-align: center;" id="continuebtn" class="btn btn-success btn-lg float-center" type="submit" value="Continue">
+            </form><br><br><br><br>
             <div id="my-signin2"></div>
             <script>
                 function onSuccess(googleUser) {
@@ -30,14 +35,8 @@
             </script>
 
             <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-            <br><br>
-            <form id="firstpage" action="/surveys/view2" method="POST">
-
-                <input style="width: 30vmin; font-size: small; text-align: center;" id="continuebtn" class="btn btn-success btn-lg float-center" type="submit" value="Continue">
-            </form>
         </div>
     </div>
-
 
 
     <%- include('../partials/footer') %>
