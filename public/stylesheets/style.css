@@ -278,24 +278,8 @@ li {
 }
 
 .checkbox {
-    text-align: left;
-    margin-left: 30vmin;
     font-family: quicksand;
-    font-size: 4vmin;
-}
-
-.checkbox1 {
-    text-align: left;
-    margin-left: 15vmin;
-    font-family: quicksand;
-    font-size: 4vmin;
-}
-
-.checkbox2 {
-    text-align: left;
-    margin-left: 22vmin;
-    font-family: quicksand;
-    font-size: 4vmin;
+    font-size: 3vmin;
 }
 
 #commentsh2,
