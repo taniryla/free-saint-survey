@@ -298,6 +298,15 @@ li {
     margin-left: 20vmin;
 }
 
+#reviewlayout {
+    background-image: url('https://i.imgur.com/efcnunL.jpg');
+}
+
+#addprovider {
+    display: flex;
+    justify-content: center;
+}
+
 
 /* // media queries */
 
