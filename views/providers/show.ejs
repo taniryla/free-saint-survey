@@ -12,22 +12,18 @@
                 </p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Address:
+                <li class="list-group-item bg-light text-muted">
                     <%= provider.address.street1 %>
                 </li>
                 <% if (provider.address.street2) { %>
-                    <li class="list-group-item">
+                    <li class="list-group-item bg-light text-muted">
                         <%= provider.address.street2 %>
                     </li>
                     <% } %>
-                        <li class="list-group-item">City:
+                        <li class="list-group-item bg-light text-muted">
                             <%= provider.address.city %>
-                        </li>
-                        <li class="list-group-item">State:
-                            <%= provider.address.state %>
-                        </li>
-                        <li class="list-group-item">Zip:
-                            <%= provider.address.zip %>
+                                <%= provider.address.state %>
+                                    <%= provider.address.zip %>
                         </li>
             </ul>
             <div class="card-body">
@@ -36,81 +32,80 @@
                 </a>
             </div>
         </div>
-        </div><br>
-        <form method="GET" action="/providers/new">
-            <input style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg float-center">
-        </form>
     </section>
 
+    <% if (provider.reviews.length) { %>
+        <table id="reviewlayout" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Date</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% let total = 0 %>
+                    <% provider.reviews.forEach(function(p) { %>
+                        <% total += p.rating %>
+                            <tr>
+                                <td class="review-user"><img alt="avatarReviews" src="<%= p.userAvatar %>">
+                                    <%= p.userName %>
+                                </td>
+                                <td>
+                                    <%= p.createdAt.toLocaleDateString() %>
+                                </td>
+                                <td>
+                                    <%= p.text %>
+                                </td>
+                                <td>
+                                    <%= p.rating %>
+                                </td>
+                                <td>
+                                    <% if (user && user._id.equals(p.user)) { %>
+                                        <form action="/reviews/<%= p._id %>?_method=DELETE" method="POST">
+                                            <button type="submit">X</button>
+                                        </form>
+                                        <% } %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <td><strong><%= (total / provider.reviews.length).toFixed(1) %></strong></td>
+                                </tr>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h5>No Reviews Yet</h5>
+            <% } %>
 
-    </section>
+                <%- include('../partials/footer') %>
 
+                    <br><br>
+                    <h2 class="text-center">Add New Provider</h2><br>
 
-    <!-- subdocument Reviews -->
+                    <form method="GET" action="/providers/new">
+                        <input id="providerbtn" style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg">
+                    </form>
 
-    <br><br>
-    <h2 id="reviewh2">Reviews</h2><br><br>
-    <% if (user) { %>
-        <form id="add-review-form" method="POST" action="/providers/<%= provider._id %>/reviews">
-            <label>Review:</label>
-            <textarea name="text" style="width: 40vmin;"></textarea>
-            <label>Rating:</label>
-            <select class="mt-4" name="rating" style="width: 40vmin;">
+                    <!-- subdocument Reviews -->
+
+                    <br><br><br><br><br>
+                    <h2 id="reviewh2" class="ml-20">Reviews</h2><br><br>
+                    <% if (user) { %>
+                        <form id="add-review-form" method="POST" action="/providers/<%= provider._id %>/reviews">
+                            <label>Review:</label>
+                            <textarea name="text" style="width: 40vmin;"></textarea>
+                            <label>Rating:</label>
+                            <select class="mt-4" name="rating" style="width: 40vmin;">
               <option value="1">1-Star 🌟</option>
               <option value="2">2-Star 🌟🌟</option>
               <option value="3">3-Star 🌟🌟🌟 </option>
               <option value="4">4-Star 🌟🌟🌟🌟</option>
               <option value="5" selected>5-Star 🌟🌟🌟🌟🌟</option>
             </select><br><br>
-            <input style="width: 40vmin; font-size: medium; text-align: center;" type="submit" value="Add Review" class="btn btn-success btn-lg float-center mt-4">
-        </form>
-        <% } %>
-
-            <% if (provider.reviews.length) { %>
-                <table id="reviewlayout" class="table table-hover"><br><br><br>
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Review</th>
-                            <th>Rating</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% let total = 0 %>
-                            <% provider.reviews.forEach(function(p) { %>
-                                <% total += p.rating %>
-                                    <tr>
-                                        <td class="review-user"><img alt="avatarReviews" src="<%= p.userAvatar %>">
-                                            <%= p.userName %>
-                                        </td>
-                                        <td>
-                                            <%= p.createdAt.toLocaleDateString() %>
-                                        </td>
-                                        <td>
-                                            <%= p.text %>
-                                        </td>
-                                        <td>
-                                            <%= p.rating %>
-                                        </td>
-                                        <td>
-                                            <% if (user && user._id.equals(p.user)) { %>
-                                                <form action="/reviews/<%= p._id %>?_method=DELETE" method="POST">
-                                                    <button type="submit">X</button>
-                                                </form>
-                                                <% } %>
-                                        </td>
-                                    </tr>
-                                    <% }); %>
-                                        <tr>
-                                            <td colspan="3"></td>
-                                            <td><strong><%= (total / provider.reviews.length).toFixed(1) %></strong></td>
-                                        </tr>
-                    </tbody>
-                </table>
-                <% } else { %>
-                    <h5>No Reviews Yet</h5>
-                    <% } %>
-
-                        <%- include('../partials/footer') %>
+                            <input style="width: 40vmin; font-size: medium; text-align: center;" type="submit" value="Add Review" class="btn btn-success btn-lg float-center mt-4">
+                        </form>
+                        <% } %>

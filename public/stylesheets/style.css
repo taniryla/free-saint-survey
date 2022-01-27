@@ -307,6 +307,14 @@ li {
     justify-content: center;
 }
 
+#providerbtn {
+    margin-right: 25vmin;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* // media queries */
 
