@@ -1,12 +1,34 @@
 * {
     box-sizing: border-box;
-    font-family: Helvetica;
+    /* font-family: "Yellowtail", sans-serif;
+    font-family: "Esteban", sans-serif; */
+    font-family: "Montserrat", sans-serif;
+    /* font-family: "Quicksand", sans-serif; */
     color: #424748;
 }
 
 body {
     margin: 0;
     height: 100vh;
+}
+
+#googlereq {
+    font-size: 2vmin;
+    font-family: quicksand;
+}
+
+#bayshore {
+    font-family: yellowtail;
+    font-size: 15vmin;
+}
+
+#balancehormones {
+    font-family: esteban;
+}
+
+#beachbody {
+    font-size: 5vmin;
+    font-family: quicksand;
 }
 
 body>main {
@@ -247,10 +269,6 @@ li {
 
 .pregnant {
     font-size: 4vmin;
-}
-
-#googlereq {
-    font-size: 2vmin;
 }
 
 #commentsh2,
