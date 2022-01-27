@@ -7,7 +7,7 @@
         </div>
         <div>Service: </div>
         <select name="service" style="width: 40vmin;">
-    <option value="endocrinologist" selected>Endocrinologist</option>
+    <option value="endocrinologist">Endocrinologist</option>
     <option value="healthCoach">Health Coach</option>
     <option value="nutritionist">Nutritionist</option>
     <option value="accupunturist">Accupunturist</option>
@@ -42,7 +42,7 @@
     <!-- subdocument Reviews -->
 
     <br><br>
-    <h2 id="reviewh2">Reviews</h2>
+    <h2 id="reviewh2">Reviews</h2><br>
     <% if (user) { %>
         <form id="add-review-form" method="POST" action="/providers/<%= provider._id %>/reviews">
             <label>Review:</label>
@@ -60,7 +60,7 @@
         <% } %>
 
             <% if (provider.reviews.length) { %>
-                <table id="reviewlayout" class="card"><br><br><br>
+                <table id="reviewlayout" class="table table-hover"><br><br><br>
                     <thead>
                         <tr>
                             <th>User</th>

@@ -6,6 +6,9 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
+var multer = require('multer');
+var qs = require('qs');
+
 
 require('dotenv').config();
 // Connect to the MongoDB database
@@ -21,6 +24,7 @@ var reviewsRouter = require('./routes/reviews');
 var commentsRouter = require('./routes/comments');
 
 var app = express();
+var upload = multer({ dest: 'uploads/' });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,17 +38,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use(session({
-  secret: process.env.SECRET,
-  resave: false,
-  saveUninitialized: true
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(function(req, res, next) {
-  res.locals.user = req.user;
-  next();
+    res.locals.user = req.user;
+    next();
 });
 
 const isLoggedIn = require('./config/auth');
@@ -58,18 +62,18 @@ app.use('/', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;

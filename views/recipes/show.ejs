@@ -29,17 +29,19 @@
     <!-- subdocument Comments -->
 
     <br><br>
-    <h2>Comments</h2>
+    <h2 id="commentsh2">Comments</h2>
+    <br>
     <% if (user) { %>
         <form id="add-comment-form" method="POST" action="/recipes/<%= recipe._id %>/comments">
             <label>Comment:</label>
-            <textarea name="text"></textarea>
+            <textarea name="text" style="width: 40vmin;"></textarea>
+            <br>
             <input type="submit" value="Add Comment">
         </form>
         <% } %>
 
             <% if (recipe.comments.length) { %>
-                <table class="table table-hover">
+                <table class="table table-hover" id="commentlayout"><br><br><br>
                     <thead>
 
                         <!-- double check this count -->

@@ -66,7 +66,7 @@ function view4(req, res) {
 function view4create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view5/${ survey._id }`);
+        res.redirect(`/surveys/view5/${req.params.id}`);
     });
 }
 
