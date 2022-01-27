@@ -45,7 +45,7 @@
                         </select><br><br>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Weight (lbs):</span>
+                                        <span class="input-group-text">Weight:</span>
                                     </div>
                                     <input type="number" class="form-control" name="weight" value="weight in pounds"> <br><br>
                                     <div class="input-group-append">
@@ -55,7 +55,7 @@
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Target Weight (lbs):</span>
+                                        <span class="input-group-text">Target Weight:</span>
                                     </div>
                                     <input type="number" class="form-control" name="targetweight" value="target weight"> <br><br>
                                     <!-- input formula for bmi * 18.5 for lowestWeight as the target weight-->
@@ -69,10 +69,10 @@
             </div>
             <div class="btn-box">
                 <form action="/surveys/view9/<%= surveyId %>" method="POST">
-                    <input type="submit" type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
+                    <input type="submit" type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center mr-4 mt-2" value="Back">
                 </form>
                 <form action="/surveys/view11/<%= surveyId %>" method="POST ">
-                    <input type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center ml-3 mt-2" value="Next">
+                    <input type="submit" style="width: 23vmin;" class="btn btn-success btn-lg float-center mr-0.5 mt-2" value="Next">
                 </form>
             </div>
         </div>
