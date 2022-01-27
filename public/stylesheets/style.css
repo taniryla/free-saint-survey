@@ -271,6 +271,33 @@ li {
     font-size: 4vmin;
 }
 
+#healthrisktextbox {
+    margin-left: 20vmin;
+    margin-top: 3vmin;
+    width: 50vmin;
+}
+
+.checkbox {
+    text-align: left;
+    margin-left: 30vmin;
+    font-family: quicksand;
+    font-size: 4vmin;
+}
+
+.checkbox1 {
+    text-align: left;
+    margin-left: 15vmin;
+    font-family: quicksand;
+    font-size: 4vmin;
+}
+
+.checkbox2 {
+    text-align: left;
+    margin-left: 22vmin;
+    font-family: quicksand;
+    font-size: 4vmin;
+}
+
 #commentsh2,
 #add-comment-form,
 #recipes-show-page,
