@@ -1,39 +1,47 @@
 <%- include('../partials/header') %>
 
     <section id="providers-show-page" class="ml-10">
-        <div>Name: </div>
-        <div>
-            <%= provider.name %>
+        <div class="card" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="" alt="Provider Img"> -->
+            <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <p class="card-text">
+                    <%= provider.name %>
+                </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Service:
+                    <%= provider.service %>
+                </li>
+                <li class="list-group-item">Address Street1:
+                    <%= provider.address.street1 %>
+                </li>
+                <% if (provider.address.street2) { %>
+                    <li class="list-group-item">Address Street2:
+                        <%= provider.address.street2 %>
+                    </li>
+                    <% } %>
+                        <li class="list-group-item">City:
+                            <%= provider.address.city %>
+                        </li>
+                        <li class="list-group-item">State:
+                            <%= provider.address.state %>
+                        </li>
+                        <li class="list-group-item">Zip:
+                            <%= provider.address.zip %>
+                        </li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">
+                    <%= provider.url %>
+                </a>
+            </div>
         </div>
-        <div>Service: </div>
-        <div>
-            <%= provider.service %>
-        </div>
-        <div>Website: </div>
-        <div>
-            <%= provider.url %>
-        </div>
-        <div>Address: </div>
-        <section>
-            <div>
-                <%= provider.address.street1 %>
-            </div>
-            <div>
-                <%= provider.address.street2 %>
-            </div>
-            <div>
-                <%= provider.address.city %>
-            </div>
-            <div>
-                <%= provider.address.state %>
-            </div>
-            <div>
-                <%= provider.address.zip %>
-            </div><br>
-            <form method="GET" action="/providers/new">
-                <input style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg float-center">
-            </form>
-        </section>
+        </div><br>
+        <form method="GET" action="/providers/new">
+            <input style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg float-center">
+        </form>
+    </section>
 
 
     </section>

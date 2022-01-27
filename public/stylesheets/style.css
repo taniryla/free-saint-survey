@@ -341,7 +341,17 @@ li {
         align-content: center;
         justify-content: center;
         font-size: 2vmin;
-        max-width: 375px;
+        max-width: 300px;
+        margin-left: 10vmin;
+        line-height: 1.3rem;
+    }
+    #reviewlayout {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        font-size: 2vmin;
     }
 }
 
