@@ -283,6 +283,11 @@ li {
     line-height: 200%;
 }
 
+#my-signin2 {
+    display: flex;
+    justify-content: center;
+}
+
 #commentsh2,
 #add-comment-form,
 #recipes-show-page,

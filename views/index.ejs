@@ -6,12 +6,35 @@
             <h1 id="bayshore" class="container display-4 text-center">If you want...</h1>
             <br>
             <h3 id="beachbody" class="text-center">a beach body that lasts</h3><br>
-            <br>
+            <div id="my-signin2"></div>
+            <script>
+                function onSuccess(googleUser) {
+                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                }
+
+                function onFailure(error) {
+                    console.log(error);
+                }
+
+                function renderButton() {
+                    gapi.signin2.render('my-signin2', {
+                        'scope': 'profile email',
+                        'width': 240,
+                        'height': 50,
+                        'longtitle': true,
+                        'theme': 'dark',
+                        'onsuccess': onSuccess,
+                        'onfailure': onFailure
+                    });
+                }
+            </script>
+
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+            <br><br>
             <form id="firstpage" action="/surveys/view2" method="POST">
+
                 <input style="width: 30vmin; font-size: small; text-align: center;" id="continuebtn" class="btn btn-success btn-lg float-center" type="submit" value="Continue">
-                <h5 id="googlereq" class="alert alert-warning text-muted float-center mt-4" style="width: 40vmin;"><b><em>(Google login required)</em></b></h5>
             </form>
-            <br>
         </div>
     </div>
 
