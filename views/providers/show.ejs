@@ -81,31 +81,33 @@
             <h5>No Reviews Yet</h5>
             <% } %>
 
-                <%- include('../partials/footer') %>
 
-                    <br><br>
-                    <h2 class="text-center">Add New Provider</h2><br>
 
-                    <form method="GET" action="/providers/new">
-                        <input id="providerbtn" style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg">
-                    </form>
+                <br><br>
+                <h2 class="text-center">Add New Provider</h2><br>
 
-                    <!-- subdocument Reviews -->
+                <form method="GET" action="/providers/new">
+                    <input id="providerbtn" style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg">
+                </form>
 
-                    <br><br><br><br><br>
-                    <h2 id="reviewh2" class="ml-20">Reviews</h2><br><br>
-                    <% if (user) { %>
-                        <form id="add-review-form" method="POST" action="/providers/<%= provider._id %>/reviews">
-                            <label>Review:</label>
-                            <textarea name="text" style="width: 40vmin;"></textarea>
-                            <label>Rating:</label>
-                            <select class="mt-4" name="rating" style="width: 40vmin;">
+                <!-- subdocument Reviews -->
+
+                <br><br><br><br><br>
+                <h2 id="reviewh2" class="ml-20">Reviews</h2><br><br>
+                <% if (user) { %>
+                    <form id="add-review-form" method="POST" action="/providers/<%= provider._id %>/reviews">
+                        <label>Review:</label>
+                        <textarea name="text" style="width: 40vmin;"></textarea>
+                        <label>Rating:</label>
+                        <select class="mt-4" name="rating" style="width: 40vmin;">
               <option value="1">1-Star 🌟</option>
               <option value="2">2-Star 🌟🌟</option>
               <option value="3">3-Star 🌟🌟🌟 </option>
               <option value="4">4-Star 🌟🌟🌟🌟</option>
               <option value="5" selected>5-Star 🌟🌟🌟🌟🌟</option>
             </select><br><br>
-                            <input style="width: 40vmin; font-size: medium; text-align: center;" type="submit" value="Add Review" class="btn btn-success btn-lg float-center mt-4">
-                        </form>
-                        <% } %>
+                        <input style="width: 40vmin; font-size: medium; text-align: center;" type="submit" value="Add Review" class="btn btn-success btn-lg float-center mt-4">
+                    </form>
+                    <% } %>
+
+                        <%- include('../partials/footer') %>
