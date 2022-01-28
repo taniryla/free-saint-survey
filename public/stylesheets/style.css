@@ -1,9 +1,6 @@
 * {
     box-sizing: border-box;
-    /* font-family: "Yellowtail", sans-serif;
-    font-family: "Esteban", sans-serif; */
     font-family: "Montserrat", sans-serif;
-    /* font-family: "Quicksand", sans-serif; */
     color: #424748;
 }
 
@@ -179,7 +176,6 @@ hr {
 #badge-container {
     display: flex;
     flex-wrap: wrap;
-    /* padding: 1rem; */
     width: 80%;
     border: 2px solid #B8C0C2;
     border-radius: .5rem;
@@ -324,18 +320,8 @@ li {
     align-items: center;
 }
 
-
-/* // media queries */
-
-
-/* The given screen size or smaller */
-
-
-/* Extra small devices (portrait phones)*/
-
 @media (max-width: 575px) {
     body {
-        /* background: yellow; */
         background: white;
     }
     .containerview {
@@ -372,12 +358,8 @@ li {
     }
 }
 
-
-/* Medium mall devices  */
-
 @media (max-width: 767px) {
     body {
-        /* background: purple; */
         background: white;
     }
     .containerview {
@@ -402,32 +384,20 @@ li {
     }
 }
 
-
-/* Medium devices (tablets) */
-
 @media (min-width: 768px) {
     body {
-        /* background: blue; */
         background: white;
     }
 }
-
-
-/* Large devices (desktops) */
 
 @media (min-width: 992px) {
     body {
-        /* background: green; */
         background: white;
     }
 }
 
-
-/* Extra large devices (large desktops) */
-
 @media (min-width: 1200px) {
     body {
-        /* background: pink; */
         background: white;
     }
 }

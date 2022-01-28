@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// shortcut variable
 const { Schema } = mongoose;
 
 const commentSchema = new Schema({
@@ -11,7 +10,6 @@ const commentSchema = new Schema({
     },
     text: String
 }, {
-    // will add and maintain createdAt and updatedAt properties
     timestamps: true
 });
 

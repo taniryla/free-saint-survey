@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// shortcut variable
 const { Schema } = mongoose;
 
 const surveySchema = new Schema({
@@ -8,7 +7,7 @@ const surveySchema = new Schema({
         enum: ['better sleep', 'fewer cravings', 'more energy', 'better mood', 'fit into clothes', 'protect health']
     },
     sexgender: {
-        type: String, // radio button
+        type: String,
         enum: ['male', 'female', 'mtf', 'ftm', 'non-binary bigender', 'self-identify', 'asexual', 'prefer not to say']
     },
     hormonestatus: {
@@ -29,20 +28,19 @@ const surveySchema = new Schema({
         enum: ['busy schedule', 'injury/medical condition', 'low energy', 'nothing works', 'pleateau', 'not a challenge']
     },
     bodyshape: {
-        type: String, // radio
+        type: String,
         enum: ['average shape', 'curvy', 'apple shape', '45 and losing my shape', '55 and gaining belly fat', 'severely obese']
     },
     height: Number,
     weight: Number,
     targetweight: Number,
-    pregnant: Boolean, // radio
+    pregnant: Boolean,
     age: Number,
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     }
 }, {
-    // will add and maintain createdAt and updatedAt properties
     timestamps: true
 });
 
