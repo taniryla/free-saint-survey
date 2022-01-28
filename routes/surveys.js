@@ -16,7 +16,7 @@ router.get('/view2', isLoggedIn, surveysCtrl.view2)
 router.post('/view2', isLoggedIn, surveysCtrl.view2create)
 
 // GET /surveys/view3
-router.get('/view3', isLoggedIn, surveysCtrl.view3)
+router.get('/view3/:id', isLoggedIn, surveysCtrl.view3)
 
 // POST /surveys/view3 
 router.post('/view3', isLoggedIn, surveysCtrl.view3create)
@@ -33,43 +33,43 @@ router.get('/view5/:id', isLoggedIn, surveysCtrl.view5)
 // POST /surveys/view5/:id
 router.post('/view5/:id', isLoggedIn, surveysCtrl.view5create)
 
-// GET /surveys/view6 
+// GET /surveys/view6/:id 
 router.get('/view6/:id', isLoggedIn, surveysCtrl.view6)
 
-// POST /surveys/view6
+// POST /surveys/view6/:id
 router.post('/view6/:id', isLoggedIn, surveysCtrl.view6create)
 
-// GET /surveys/view7 
+// GET /surveys/view7/:id 
 router.get('/view7/:id', isLoggedIn, surveysCtrl.view7)
 
-// POST /surveys/view6
+// POST /surveys/view7/:id
 router.post('/view7/:id', isLoggedIn, surveysCtrl.view7create)
 
-// GET /surveys/view8 
+// GET /surveys/view8/:id 
 router.get('/view8/:id', isLoggedIn, surveysCtrl.view8)
 
-// POST /surveys/view8
+// POST /surveys/view8/:id
 router.post('/view8/:id', isLoggedIn, surveysCtrl.view8create)
 
-// GET /surveys/view9 
+// GET /surveys/view9/:id 
 router.get('/view9/:id', isLoggedIn, surveysCtrl.view9)
 
-// POST /surveys/view9
+// POST /surveys/view9/:id
 router.post('/view9/:id', isLoggedIn, surveysCtrl.view9create)
 
-// GET /surveys/view10 
+// GET /surveys/view10/:id 
 router.get('/view10/:id', isLoggedIn, surveysCtrl.view10)
 
-// POST /surveys/view10
+// POST /surveys/view10/:id
 router.post('/view10/:id', isLoggedIn, surveysCtrl.view10create)
 
-// GET /surveys/view11 
+// GET /surveys/view11/:id 
 router.get('/view11/:id', isLoggedIn, surveysCtrl.view11)
 
-// POST /surveys/view11
+// POST /surveys/view11/:id
 router.post('/view11/:id', isLoggedIn, surveysCtrl.view11create)
 
-// GET /surveys/view12 
+// GET /surveys/view12/:id 
 router.get('/view12/:id', isLoggedIn, surveysCtrl.view12)
 
 

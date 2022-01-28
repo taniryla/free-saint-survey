@@ -4,35 +4,30 @@
         <img class="containerviewphoto float-left" src="https://i.imgur.com/mWNvFsn.png" alt="doctor with too much paperwork">
         <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
             <div class="text-box container display-4 text-center">
-                <form method="POST" action="/surveys/view6/<%= surveyId %>">
+                <form method="POST" action="/surveys/view6/<%= survey._id %>">
                     <fieldset>
                         <legend style="font-size: 1.3rem;" class="text-center form-check">Are you at risk for the following?
                             <legend><br>
                                 <div class="checkbox">
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="heart disease or stroke"> heart disease or stroke<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="heavy/polyps"> heavy/polyps <br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="endometriosis"> endometriosis<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="severe pms"> severe pms<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="pcos or progesterone"> pcos or progesterone<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="partial hysterectomy"> partial hysterectomy<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="full hysterectomy"> full hysterectomy<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="high blood pressure"> high blood pressure<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="diabetes"> diabetes<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="menopause"> menopause<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="nash"> nash<br>
-                                    <input class="form-check-input" type="checkbox" name="healthrisks1" value="none"> none<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'heart disease or stroke') && 'checked' %> value="heart disease or stroke"> heart disease or stroke<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'heavy/polyps') && 'checked' %> value="heavy/polyps"> heavy/polyps <br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'endometriosis') && 'checked' %> value="endometriosis"> endometriosis<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'severe pms') && 'checked' %> value="severe pms"> severe pms<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'pcos or progesterone') && 'checked' %> value="pcos or progesterone"> pcos or progesterone<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'partial hysterectomy') && 'checked' %> value="partial hysterectomy"> partial hysterectomy<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'full hysterectomy') && 'checked' %> value="full hysterectomy"> full hysterectomy<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'high blood pressure') && 'checked' %> value="high blood pressure"> high blood pressure<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'diabetes') && 'checked' %> value="diabetes"> diabetes<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'menopause') && 'checked' %> value="menopause"> menopause<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'nash') && 'checked' %> value="nash"> nash<br>
+                                    <input class="form-check-input" type="checkbox" name="healthrisks1" <%= survey.healthrisks1.includes( 'none') && 'checked' %> value="none"> none<br>
                                 </div>
                     </fieldset>
                     <input type="submit" style="width: 50vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
                 </form>
             </div>
             <div class="btn-box">
-                <form action="/surveys/view5/<%= surveyId %>" method="POST">
-                    <input type="submit" type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
-                </form>
-                <form action="/surveys/view7/<%= surveyId %>" method="POST ">
-                    <input type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-2" value="Next">
-                </form>
+                <a href="/surveys/view5/<%= survey._id %>" class="btn btn-success btn-lg float-center mt-2" style="width: 50vmin; font-size: small;">Back</a>
             </div>
         </div>
     </div>

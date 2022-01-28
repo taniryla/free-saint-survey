@@ -4,29 +4,24 @@
         <img class="containerviewphoto float-left" src="https://i.imgur.com/yX7IJDr.png" alt="doctor at desk">
         <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
             <div class="text-box container display-4 text-center">
-                <form method="POST" action="/surveys/view8/<%= surveyId %>">
+                <form method="POST" action="/surveys/view8/<%= survey._id %>">
                     <fieldset>
                         <legend style="font-size: 1.3rem;" class="text-center form-check">What's the #1 barrier preventing you from exercising as much as you need too?
                             <legend><br>
                                 <div class="checkbox">
-                                    <input class="form-check-input" type="checkbox" name="topbarrier" value="busy schedule"> busy schedule<br>
-                                    <input class="form-check-input" type="checkbox" name="topbarrier" value="injury/medical condition"> injury/medical condition<br>
-                                    <input class="form-check-input" type="checkbox" name="topbarrier" value="low energy"> low energy<br>
-                                    <input class="form-check-input" type="checkbox" name="topbarrier" value="nothing works"> nothing works<br>
-                                    <input class="form-check-input" type="checkbox" name="topbarrier" value="plateau"> plateau<br>
-                                    <input class="form-check-input" type="checkbox" name="topbarrier" value="not a challenge"> not a challenge<br>
+                                    <input class="form-check-input" type="checkbox" name="topbarrier" <%= survey.topbarrier.includes( 'busy schedule') && 'checked' %> value="busy schedule"> busy schedule<br>
+                                    <input class="form-check-input" type="checkbox" name="topbarrier" <%= survey.topbarrier.includes( 'injury/medical condition') && 'checked' %> value="injury/medical condition"> injury/medical condition<br>
+                                    <input class="form-check-input" type="checkbox" name="topbarrier" <%= survey.topbarrier.includes( 'low energy') && 'checked' %> value="low energy"> low energy<br>
+                                    <input class="form-check-input" type="checkbox" name="topbarrier" <%= survey.topbarrier.includes( 'nothing works') && 'checked' %> value="nothing works"> nothing works<br>
+                                    <input class="form-check-input" type="checkbox" name="topbarrier" <%= survey.topbarrier.includes( 'plateau') && 'checked' %> value="plateau"> plateau<br>
+                                    <input class="form-check-input" type="checkbox" name="topbarrier" <%= survey.topbarrier.includes( 'not a challenge') && 'checked' %> value="not a challenge"> not a challenge<br>
                                 </div>
                     </fieldset>
                     <input type="submit" style="width: 50vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
                 </form>
             </div>
             <div class="btn-box">
-                <form action="/surveys/view7/<%= surveyId %>" method="POST">
-                    <input type="submit" type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
-                </form>
-                <form action="/surveys/view9/<%= surveyId %>" method="POST ">
-                    <input type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-2" value="Next">
-                </form>
+                <a href="/surveys/view7/<%= survey._id %>" class="btn btn-success btn-lg float-center mt-2" style="width: 50vmin; font-size: small;">Back</a>
             </div>
         </div>
     </div>

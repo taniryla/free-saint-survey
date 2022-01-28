@@ -4,7 +4,7 @@
         <img class="containerviewphoto float-left" src="https://i.imgur.com/TiVVNVP.png" alt="doctor with arms folded">
         <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
             <div class="text-box container display-4 text-center">
-                <form method="POST" action="/surveys/view10/<%= surveyId %>">
+                <form method="POST" action="/surveys/view10/<%= survey._id %>">
                     <fieldset>
                         <legend style="font-size: 1.3rem;" class="text-center form-check form-group">What best describes your body shape?
                             <legend><br>
@@ -37,11 +37,11 @@
                                     <option value="82">6'10"</option>
                                     <option value="83">6'11"</option>
                                     <option value="84">7'0"</option>
-                                    <option value="86">7'1"</option>
-                                    <option value="87">7'2"</option>
-                                    <option value="88">7'3"</option>
-                                    <option value="89">7'4"</option>
-                                    <option value="90">7'5"</option>
+                                    <option value="85">7'1"</option>
+                                    <option value="86">7'2"</option>
+                                    <option value="87">7'3"</option>
+                                    <option value="88">7'4"</option>
+                                    <option value="89">7'5"</option>
                         </select><br>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -52,13 +52,12 @@
                                         <span class="input-group-text">(lbs)</span>
                                     </div>
                                 </div>
-
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Target Weight:</span>
+                                        <span class="input-group-text">Target Weight: 
+                                            <input type="number" class="form-control" name="targetweight" value="target weight"> <br><br>
+                                        </span>
                                     </div>
-                                    <input type="number" class="form-control" name="targetweight" value="target weight"> <br><br>
-                                    <!-- input formula for bmi * 18.5 for lowestWeight as the target weight-->
                                     <div class="input-group-append">
                                         <span class="input-group-text">(lbs)</span>
                                     </div>
@@ -68,12 +67,7 @@
                 </form>
             </div>
             <div class="btn-box">
-                <form action="/surveys/view9/<%= surveyId %>" method="POST">
-                    <input type="submit" type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
-                </form>
-                <form action="/surveys/view11/<%= surveyId %>" method="POST ">
-                    <input type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-2" value="Next">
-                </form>
+                <a href="/surveys/view9/<%= survey._id %>" class="btn btn-success btn-lg float-center mt-2" style="width: 50vmin; font-size: small;">Back</a>
             </div>
         </div>
     </div>

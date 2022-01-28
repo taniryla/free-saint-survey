@@ -1,3 +1,4 @@
+const survey = require('../models/survey');
 const Survey = require('../models/survey');
 
 module.exports = {
@@ -43,12 +44,15 @@ function view2create(req, res) {
     res.render(`surveys/view2`);
 };
 
-
 function view3(req, res) {
-    res.render('surveys/view3');
+    if (req.params.id !== 'new') {
+        Survey.findById(req.params.id, function(err, survey) {
+            res.render('surveys/view3', { survey });
+        })
+    } else {
+        res.render('surveys/view3', { survey: {} });
+    }
 }
-
-
 
 function view3create(req, res) {
     const survey = new Survey(req.body);
@@ -60,93 +64,112 @@ function view3create(req, res) {
 }
 
 function view4(req, res) {
-    res.render('surveys/view4', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view4', { survey });
+    });
 }
 
 function view4create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view5/${req.params.id}`);
+        res.redirect(`/surveys/view5/${survey._id}`);
     });
 }
 
 function view5(req, res) {
-    res.render('surveys/view5', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view5', { survey });
+    });
 }
 
 function view5create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view6/${req.params.id}`);
+        res.redirect(`/surveys/view6/${survey._id}`);
     });
 }
 
 function view6(req, res) {
-    res.render('surveys/view6', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view6', { survey });
+    });
 }
 
 function view6create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view7/${req.params.id}`);
+        res.redirect(`/surveys/view7/${survey._id}`);
     });
 }
 
 function view7(req, res) {
-    res.render('surveys/view7', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view7', { survey });
+    });
 }
 
 function view7create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view8/${req.params.id}}`);
+        res.redirect(`/surveys/view8/${survey._id}`);
     });
 }
 
 function view8(req, res) {
-    res.render('surveys/view8', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view8', { survey });
+    });
 }
 
 function view8create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view9/${req.params.id}`);
+        res.redirect(`/surveys/view9/${survey._id}`);
     });
 }
 
 function view9(req, res) {
-    res.render('surveys/view9', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view9', { survey });
+    });
 }
 
 function view9create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view10/${req.params.id}`);
+        res.redirect(`/surveys/view10/${survey._id}`);
     });
 }
 
 function view10(req, res) {
-    res.render('surveys/view10', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view10', { survey });
+    });
 }
 
 function view10create(req, res) {
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view11/${req.params.id}`);
+        res.redirect(`/surveys/view11/${survey._id}`);
     });
 }
 
 function view11(req, res) {
-    res.render('surveys/view11', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view11', { survey });
+    });
 }
 
 function view11create(req, res) {
+    req.body.pregnant = req.body.pregnant === 'yes';
     Survey.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, survey) { // this is what we will repeat
         console.log(survey);
-        res.redirect(`/surveys/view12/${req.params.id}`);
+        res.redirect(`/surveys/view12/${survey._id}`);
     });
 }
 
 function view12(req, res) {
-    res.render('surveys/view12', { surveyId: req.params.id });
+    Survey.findById(req.params.id, function(err, survey) {
+        res.render('surveys/view12', { survey });
+    });
 }

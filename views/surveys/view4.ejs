@@ -4,31 +4,26 @@
         <img class="containerviewphoto float-left" src="https://i.imgur.com/dBDM8Ly.png" alt="doctor in lab">
         <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
             <div class="text-box container display-4 text-center">
-                <form method="POST" action="/surveys/view5/<%= surveyId %>">
+                <form method="POST" action="/surveys/view4/<%= survey._id %>">
                     <fieldset>
                         <legend style="font-size: 1.3rem;" class="text-center form-check">Our sex and hormones are quite possibly the most underrated factor in losing weight. What sex best describes you?
                             <legend><br>
                                 <div class="checkbox">
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="male"> male<br>
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="female"> female<br>
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="mtf"> mtf<br>
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="ftm"> ftm<br>
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="non-binary bigender"> non-binary bigender<br>
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="self-identify"> self-identify<br>
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="asexual"> asexual<br>
-                                    <input class="form-check-input" type="checkbox" name="sexgender" value="prefer not to say"> prefer not to say<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'male') && 'checked' %> name="sexgender" value="male"> male<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'female') && 'checked' %> name="sexgender" value="female"> female<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'mtf') && 'checked' %> name="sexgender" value="mtf"> mtf<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'ftm') && 'checked' %> name="sexgender" value="ftm"> ftm<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'non-binary bigender') && 'checked' %> name="sexgender" value="non-binary bigender"> non-binary bigender<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'self-identify') && 'checked' %> name="sexgender" value="self-identify"> self-identify<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'asexual') && 'checked' %> name="sexgender" value="asexual"> asexual<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'prefer not to say') && 'checked' %> name="sexgender" value="prefer not to say"> prefer not to say<br>
                                 </div>
                     </fieldset>
                     <input type="submit" style="width: 50vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
                 </form>
             </div>
             <div class="btn-box">
-                <form action="/surveys/view3" method="GET">
-                    <input type="submit" type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
-                </form>
-                <form action="/surveys/view5/<%= surveyId %>" method="POST ">
-                    <input type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-2" value="Next">
-                </form>
+                <a href="/surveys/view3/<%= survey._id %>" class="btn btn-success btn-lg float-center mt-2" style="width: 50vmin; font-size: small;">Back</a>
             </div>
         </div>
     </div>

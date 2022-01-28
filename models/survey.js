@@ -4,49 +4,39 @@ const { Schema } = mongoose;
 
 const surveySchema = new Schema({
     toppriority: {
-        type: String,
+        type: [String],
         enum: ['better sleep', 'fewer cravings', 'more energy', 'better mood', 'fit into clothes', 'protect health']
     },
     sexgender: {
-        type: String,
+        type: String, // radio button
         enum: ['male', 'female', 'mtf', 'ftm', 'non-binary bigender', 'self-identify', 'asexual', 'prefer not to say']
     },
     hormonestatus: {
-        type: String,
+        type: [String],
         enum: ['not using any hormones', 'birth control for pregnancy', 'birth control for symptoms', 'progesterone only', 'I take HRT/estrogen', 'I take TRT/testosterone']
     },
     healthrisks1: {
-        type: String,
+        type: [String],
         enum: ['heart disease or stroke', 'heavy/polyps', 'endometriosis', 'severe pms', 'pcos or progesterone', 'menopause', 'partial hysterectomy', 'full hysterectomy', 'high blood pressure', 'diabetes', 'nash', 'high cholesterol']
     },
     healthrisks2: {
-        type: String,
+        type: [String],
         enum: ['imsomnia', 'osteoarthritis', 'kidney disease', 'depression', 'none', 'other (write below'],
-        healthRisksWriteBelow: String
     },
+    healthriskswritebelow: String,
     topbarrier: {
-        type: String,
+        type: [String],
         enum: ['busy schedule', 'injury/medical condition', 'low energy', 'nothing works', 'pleateau', 'not a challenge']
     },
     bodyshape: {
-        type: String,
+        type: String, // radio
         enum: ['average shape', 'curvy', 'apple shape', '45 and losing my shape', '55 and gaining belly fat', 'severely obese']
     },
-    height: {
-        type: Number,
-    },
-    weight: {
-        type: Number,
-    },
-    targetweight: {
-        type: Number,
-    },
-    pregnant: {
-        type: Boolean,
-    },
-    age: {
-        type: Number,
-    },
+    height: Number,
+    weight: Number,
+    targetweight: Number,
+    pregnant: Boolean, // radio
+    age: Number,
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'

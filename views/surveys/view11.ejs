@@ -4,7 +4,7 @@
         <img class="containerviewphoto float-left" src="https://i.imgur.com/U9m2mYi.png" alt="doctor sipping tea">
         <div class="rightcontainer bg-white jumbotron jumbotron-fluid text-center">
             <div class="text-box container display-4 text-center">
-                <form method="POST" action="/surveys/view11/<%= surveyId %>">
+                <form method="POST" action="/surveys/view11/<%= survey._id %>">
                     <fieldset style="font-size: 1.3rem;" class="text-center form-check form-group">
                         <label style="font-size: 1rem;">Age:</label>
                         <select class="form-control" name="age">
@@ -71,14 +71,14 @@
                           <option value="79">79</option>
                         </select><br>
                     </fieldset>
-                    <div class="pregnant form-check" name="pregnant">
-                        <input class="form-check-input" type="checkbox" value="" id="yespregnant">
+                    <div class="pregnant form-check">
+                        <input class="form-check-input" name="pregnant" type="radio" value="yes" id="yespregnant">
                         <label class="form-check-label" for="yespregnant">
                               I'm pregnant
                             </label>
                     </div>
-                    <div class="pregnant form-check mt-3 mb-3" name="pregnant">
-                        <input class="form-check-input" type="checkbox" value="" id="nopregnant">
+                    <div class="pregnant form-check mt-3 mb-3">
+                        <input class="form-check-input" name="pregnant" type="radio" checked value="no" id="nopregnant">
                         <label class="form-check-label" for="nopregnant">
                               I'm not pregnant
                             </label>
@@ -87,12 +87,7 @@
                 </form>
             </div>
             <div class="btn-box">
-                <form action="/surveys/view10/<%= surveyId %>" method="POST">
-                    <input type="submit" type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mr-3 mt-2" value="Back">
-                </form>
-                <form action="/surveys/view12/<%= surveyId %>" method="POST ">
-                    <input type="submit" style="width: 23vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-2" value="Next">
-                </form>
+                <a href="/surveys/view10/<%= survey._id %>" class="btn btn-success btn-lg float-center mt-2" style="width: 50vmin; font-size: small;">Back</a>
             </div>
         </div>
     </div>
