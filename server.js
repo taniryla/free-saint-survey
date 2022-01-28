@@ -6,8 +6,6 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
-var multer = require('multer');
-var qs = require('qs');
 
 require('dotenv').config();
 // Connect to the MongoDB database
@@ -23,7 +21,6 @@ var reviewsRouter = require('./routes/reviews');
 var commentsRouter = require('./routes/comments');
 
 var app = express();
-var upload = multer({ dest: 'uploads/' });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -9,14 +9,14 @@
                         <legend style="font-size: 1.3rem;" class="text-center form-check">Our sex and hormones are quite possibly the most underrated factor in losing weight. What sex best describes you?
                             <legend><br>
                                 <div class="checkbox">
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'male') && 'checked' %> name="sexgender" value="male"> male<br>
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'female') && 'checked' %> name="sexgender" value="female"> female<br>
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'mtf') && 'checked' %> name="sexgender" value="mtf"> mtf<br>
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'ftm') && 'checked' %> name="sexgender" value="ftm"> ftm<br>
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'non-binary bigender') && 'checked' %> name="sexgender" value="non-binary bigender"> non-binary bigender<br>
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'self-identify') && 'checked' %> name="sexgender" value="self-identify"> self-identify<br>
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'asexual') && 'checked' %> name="sexgender" value="asexual"> asexual<br>
-                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'prefer not to say') && 'checked' %> name="sexgender" value="prefer not to say"> prefer not to say<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'male') && checked %> name="sexgender" value="male"> male<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'female') && checked %> name="sexgender" value="female"> female<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'mtf') && checked %> name="sexgender" value="mtf"> mtf<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'ftm') && checked %> name="sexgender" value="ftm"> ftm<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'non-binary bigender') && this.checked %> name="sexgender" value="non-binary bigender"> non-binary bigender<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'self-identify') && checked %> name="sexgender" value="self-identify"> self-identify<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'asexual') && checked %> name="sexgender" value="asexual"> asexual<br>
+                                    <input class="form-check-input" type="radio" <%= survey.toppriority.includes( 'prefer not to say') && checked %> name="sexgender" value="prefer not to say"> prefer not to say<br>
                                 </div>
                     </fieldset>
                     <input type="submit" style="width: 50vmin; font-size: small;" class="btn btn-success btn-lg float-center mt-3" value="Save And Next">
