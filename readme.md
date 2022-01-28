@@ -9,7 +9,8 @@ Free Saint is a health tech company focused on creating the "uber" scheduling ap
 As this prototype develops, it will iterate with user journey stories and client interviews. The goal of this app in the next 12-months include: 
 
     -Building a machine learning algorithm that "learns" how to best optimize an algorithm that I will build called the Metabolism Maximizer
-    -The science behind the recently discovered stomach hormone called Ghrelin and Leptin and the research momentum to find a way to manipulate Ghrelin-blockers to treat obesity
+    -The science behind the recently discovered stomach hormone called Ghrelin and Leptin and the research momentum to find a way to manipulate Ghrelin-blockers to     treat obesity
+    -GHS (growth hormone secretagogues) such as MK-677 Ibutamoren Mesylate have been reported by NIH to mimic the gastric peptide hormone Grhelin as an approach to     increase metabolism, act as a samatoastation antagonists to reduce cortisol, and enhace the activity of growth hormones
     -Partnership with a well-known endocronoligist for new approaches to lipolysis (fat burning)
 
 # Three Year Plan
