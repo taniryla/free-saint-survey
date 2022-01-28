@@ -16,7 +16,7 @@ const commentSchema = new Schema({
 });
 
 const recipeSchema = new Schema({
-    recipe: {
+    title: {
         type: String,
         required: true
     },
@@ -30,9 +30,10 @@ const recipeSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ['Vegan', 'Keto', 'Mediterranean', 'Golo', 'Pegan', 'Prolon'], 
+        enum: ['Vegan', 'Keto', 'Mediterranean', 'Golo', 'Pegan', 'Prolon'],
         required: true
     },
+    fullrecipe: String,
     comments: [commentSchema]
 });
 

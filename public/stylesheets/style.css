@@ -35,6 +35,11 @@ body {
     font-family: yellowtail;
 }
 
+#recipebtn {
+    float: right;
+    margin-right: 25vmin;
+}
+
 body>main {
     grid-area: main;
     display: flex;

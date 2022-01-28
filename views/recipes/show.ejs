@@ -1,42 +1,46 @@
 <%- include('../partials/header') %>
 
-    <section id="recipes-show-page">
-        <div>Recipe Name: </div>
-        <div>
-            <%= recipe.recipe %>
-        </div>
-        <div>Email: </div>
-        <div>
-            <%= recipe.email %>
-        </div>
-        <div>Description: </div>
-        <div>
-            <%= recipe.description %>
-        </div>
-        <div>Recipe Category: </div>
-        <div>
-            <%= recipe.category %>
-        </div>
-        <br><br>
-        <img src="" alt="<%= recipe.recipe %>">
-        <!-- ask Jim how to add the photos for this project-->
-        <div>Recipe Text: </div>
-        <div>
-            <%= recipe.text %>
-        </div>
+    <section id="recipes-show-page" class="ml-10">
+        <div class="card" style="width: 80vmin;">
+            <img class="card-img-top" src="https://i.imgur.com/lTD9V7B.jpg" alt="Vegan Hambuger Img">
+            <div class="card-body">
+                <div class="card-text">
+                    <%= recipe.title %>
+                </div>
+                <div class="card-text">
+                    <%= recipe.email %>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-light text-muted">
+                        <%= recipe.description %>
+                    </li><br>
+                    <li class="list-group-item bg-light text-muted">
+                        <%= recipe.category %>
+                    </li><br>
+                </ul>
+                <div class="card-body">
+                    <div class="card-link">
+                        <%= recipe.fullrecipe %>
+                    </div>
+                </div>
     </section>
+
+    <br><br>
+    <h2 class="text-center">Add New Recipe</h2><br>
+
+    <input action="/recipes/new" type="submit" id="recipebtn" value="Add Recipe" style="width: 50vmin; font-size: medium; text-align: center;" class="btn btn-success btn-lg"></a>
 
     <!-- subdocument Comments -->
 
     <br><br>
-    <h2 id="commentsh2">Comments</h2>
+    <h2 id="commentsh2" class="text-center ml-20 mt-4">Comments</h2>
     <br>
     <% if (user) { %>
         <form id="add-comment-form" method="POST" action="/recipes/<%= recipe._id %>/comments">
             <label>Comment:</label>
             <textarea name="text" style="width: 40vmin;"></textarea>
             <br>
-            <input type="submit" value="Add Comment">
+            <input type="submit" value="Add Comment" style="width: 50vmin; font-size: medium; text-align: center;" class="btn btn-success btn-lg">
         </form>
         <% } %>
 

@@ -1,31 +1,28 @@
 <%- include('../partials/header') %>
 
-<form id="new-recipe-form" action="/recipes" method="POST">
-  <label>Recipe Name:</label>
-  <input type="text" name="recipe">
-  <label>Submitter's Email: </label>
-  <input type="text" name="email">
-  <label>Description:</label>
-  <input type="text" name="description">
-  <label>Recipe Category:</label>
-  <select name="category">
-    <option value="Vegan">Vegan</option>
-    <option value="Keto">Keto</option>
-    <option value="Mediterranean">Mediterranean</option>
-    <option value="Golo">Golo</option>
-    <option value="Pegan">Pegan</option>
-    <option value="Prolon">Prolon</option>
-  </select>
-  <label>Add Receipt Below:</label>
-  <input type="text" name="text"><br>
-  <br>
-  <!-- <label>Insert Recipe Image:</label><br><br>
-  <input type="image" src="image_submit.gif" alt="Submit" width="48" height="48"> -->
-  <br><br>
-  <button type="submit">Add Recipe</button>
-  
-</form>
+    <form id="new-recipe-form" action="/recipes" method="POST">
+        <label>Recipe Name:</label>
+        <input type="text" name="title">
+        <label>Submitter's Email: </label>
+        <input type="text" name="email">
+        <label>Description:</label>
+        <input type="text" name="description">
+        <label>Recipe Category:</label>
+        <select name="category">
+            <option value="Vegan">Vegan</option>
+             <option value="Keto">Keto</option>
+            <option value="Mediterranean">Mediterranean</option>
+            <option value="Golo">Golo</option>
+            <option value="Pegan">Pegan</option>
+            <option value="Prolon">Prolon</option>
+      </select>
+        <label>Add Receipt Below:</label>
+        <textarea name="fullrecipe" cols="30" rows="10"></textarea>
+        <br><br>
+        <button type="submit">Add Recipe</button>
+
+    </form>
 
 
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
