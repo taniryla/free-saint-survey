@@ -31,6 +31,10 @@ body {
     font-family: quicksand;
 }
 
+#onestop {
+    font-family: yellowtail;
+}
+
 body>main {
     grid-area: main;
     display: flex;
