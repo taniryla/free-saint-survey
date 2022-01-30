@@ -119,29 +119,14 @@ table td {
     background-color: white;
 }
 
-#recipes-show-page,
-#providers-show-page {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 1rem;
-}
-
 #providers-show-page div:nth-child(even) {
     font-weight: bold;
-}
-
-#recipes-show-page {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 1rem;
 }
 
 #recipes-show-page div:nth-child(even) {
     font-weight: bold;
 }
 
-#recipes-show-page,
-#providers-show-page,
 #add-review-form,
 #add-comment-form {
     display: grid;

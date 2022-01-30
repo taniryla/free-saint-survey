@@ -40,51 +40,53 @@
                 <label>Comment:</label>
                 <textarea name="text" style="width: 40vmin;"></textarea>
                 <br>
-                <input type="submit" value="Add Comment" style="width: 40vmin; font-size: medium; text-align: center;" class="btn btn-success btn-lg">
+                <input type="submit" value="Add Comment" style="width: 40vmin; font-size: small; text-align: center;" class="btn btn-success btn-lg">
             </form>
     </div>
 
     <% } %>
 
-        <% if (recipe.comments.length) { %>
-            <table class="table table-hover" id="commentlayout"><br><br><br>
-                <thead>
+        <div class="d-flex justify-content-center">
+            <% if (recipe.comments.length) { %>
+                <table class="table table-hover"><br><br><br>
+                    <thead>
 
-                    <tr>
-                        <th>User</th>
-                        <th>Date</th>
-                        <th>Comments</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% recipe.comments.forEach(function(r) { %>
                         <tr>
-                            <td class="comment-user"><img alt="avatarComment" src="<%= r.userAvatar %>">
-                                <%= r.userName %>
-                            </td>
-                            <td>
-                                <%= r.createdAt.toLocaleDateString() %>
-                            </td>
-                            <td>
-                                <%= r.text %>
-                            </td>
-                            <td>
-                                <% if (user && user._id.equals(r.user)) { %>
-                                    <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
-                                        <button type="submit">X</button>
-                                    </form>
-                                    <% } %>
-                            </td>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Comments</th>
+                            <th></th>
                         </tr>
-                        <% }); %>
+                    </thead>
+                    <tbody>
+                        <% recipe.comments.forEach(function(r) { %>
                             <tr>
-                                <td colspan="3"></td>
+                                <td class="comment-user"><img alt="avatarComment" src="<%= r.userAvatar %>">
+                                    <%= r.userName %>
+                                </td>
+                                <td>
+                                    <%= r.createdAt.toLocaleDateString() %>
+                                </td>
+                                <td>
+                                    <%= r.text %>
+                                </td>
+                                <td>
+                                    <% if (user && user._id.equals(r.user)) { %>
+                                        <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
+                                            <button type="submit">X</button>
+                                        </form>
+                                        <% } %>
+                                </td>
                             </tr>
-                </tbody>
-            </table>
-            <% } else { %>
-                <h5>No Comments Yet</h5>
-                <% } %>
+                            <% }); %>
+                                <tr>
+                                    <td colspan="3"></td>
+                                </tr>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <h5>No Comments Yet</h5>
+                    <% } %>
 
-                    <%- include('../partials/footer') %>
+                        <%- include('../partials/footer') %>
+        </div>
