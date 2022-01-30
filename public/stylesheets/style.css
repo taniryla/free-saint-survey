@@ -310,14 +310,12 @@ li {
     }
     #onestop {
         display: flex;
-        margin-left: 4vmin;
         align-content: center;
         justify-content: center;
         text-align: center;
     }
     #datascience {
         display: flex;
-        margin-left: 4vmin;
         align-content: center;
         justify-content: center;
         text-align: center;
