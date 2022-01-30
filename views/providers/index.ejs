@@ -1,26 +1,36 @@
 <%- include('../partials/header') %>
 
-<table id="provider-list">
-  <thead>
-    <tr>
-      <th>Name </th>
-      <th>Service </th>
-      <th>City </th>
-      <th>State </th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% providers.forEach(function(p) { %>
-      <tr>
-        <td><%= p.name %></td>
-        <td><%= p.service %></td>
-        <td><%= p.address.city %></td>
-        <td><%= p.address.state %></td>
-        <td><a href="/providers/<%= p._id %>">DETAILS</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
-<%- include('../partials/footer') %>
+    <div style="overflow-y: scroll">
+        <table id="provider-list">
+            <thead>
+                <tr>
+                    <th>Name </th>
+                    <th>Service </th>
+                    <th>City </th>
+                    <th>State </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% providers.forEach(function(p) { %>
+                    <tr>
+                        <td>
+                            <%= p.name %>
+                        </td>
+                        <td>
+                            <%= p.service %>
+                        </td>
+                        <td>
+                            <%= p.address.city %>
+                        </td>
+                        <td>
+                            <%= p.address.state %>
+                        </td>
+                        <td><a href="/providers/<%= p._id %>">DETAILS</a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include('../partials/footer') %>

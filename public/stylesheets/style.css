@@ -32,11 +32,6 @@ body {
     font-family: yellowtail;
 }
 
-#recipebtn {
-    display: flex;
-    justify-content: center;
-}
-
 body>main {
     grid-area: main;
     display: flex;
@@ -49,12 +44,6 @@ body>main {
 
 body>main h1:first-child {
     margin-bottom: 50px;
-}
-
-#new-recipe-form {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
 #new-recipe-form {
@@ -291,14 +280,6 @@ li {
 #my-signin2 {
     display: flex;
     justify-content: center;
-}
-
-#commentsh2,
-#add-comment-form,
-#reviewh2,
-#add-review-form,
-#comment-user {
-    margin-left: 20vmin;
 }
 
 #commentlayout,
