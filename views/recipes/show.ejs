@@ -24,6 +24,48 @@
                     </div>
                 </div>
     </section>
+    <div id="commentlayout" class="d-flex justify-content-center">
+        <% if (recipe.comments.length) { %>
+            <table class="table table-hover"><br><br><br>
+                <thead>
+
+                    <tr>
+                        <th>User</th>
+                        <th>Date</th>
+                        <th>Comments</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% recipe.comments.forEach(function(r) { %>
+                        <tr>
+                            <td class="comment-user"><img alt="avatarComment" src="<%= r.userAvatar %>">
+                                <%= r.userName %>
+                            </td>
+                            <td>
+                                <%= r.createdAt.toLocaleDateString() %>
+                            </td>
+                            <td>
+                                <%= r.text %>
+                            </td>
+                            <td>
+                                <% if (user && user._id.equals(r.user)) { %>
+                                    <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
+                                        <button type="submit">X</button>
+                                    </form>
+                                    <% } %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                </tbody>
+            </table>
+            <% } else { %>
+                <h5>No Comments Yet</h5>
+                <% } %>
+    </div>
 
     <br><br>
     <h2 class="text-center">Add New Recipe</h2><br>
@@ -46,47 +88,6 @@
 
     <% } %>
 
-        <div class="d-flex justify-content-center">
-            <% if (recipe.comments.length) { %>
-                <table class="table table-hover"><br><br><br>
-                    <thead>
 
-                        <tr>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Comments</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% recipe.comments.forEach(function(r) { %>
-                            <tr>
-                                <td class="comment-user"><img alt="avatarComment" src="<%= r.userAvatar %>">
-                                    <%= r.userName %>
-                                </td>
-                                <td>
-                                    <%= r.createdAt.toLocaleDateString() %>
-                                </td>
-                                <td>
-                                    <%= r.text %>
-                                </td>
-                                <td>
-                                    <% if (user && user._id.equals(r.user)) { %>
-                                        <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
-                                            <button type="submit">X</button>
-                                        </form>
-                                        <% } %>
-                                </td>
-                            </tr>
-                            <% }); %>
-                                <tr>
-                                    <td colspan="3"></td>
-                                </tr>
-                    </tbody>
-                </table>
-                <% } else { %>
-                    <h5>No Comments Yet</h5>
-                    <% } %>
 
-                        <%- include('../partials/footer') %>
-        </div>
+        <%- include('../partials/footer') %>

@@ -373,15 +373,3 @@ li {
         margin-left: 10px;
     }
 }
-
-@media (min-width: 992px) {
-    body {
-        background: white;
-    }
-}
-
-@media (min-width: 1200px) {
-    body {
-        background: white;
-    }
-}
