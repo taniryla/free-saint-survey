@@ -295,29 +295,15 @@ li {
 
 #commentsh2,
 #add-comment-form,
-#recipes-show-page,
 #reviewh2,
 #add-review-form,
-#comment-user,
-#providers-show-page {
+#comment-user {
     margin-left: 20vmin;
 }
 
+#commentlayout,
 #reviewlayout {
     background-image: url('https://i.imgur.com/efcnunL.jpg');
-}
-
-#addprovider {
-    display: flex;
-    justify-content: center;
-}
-
-#providerbtn {
-    margin-right: 25vmin;
-    float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 @media (max-width: 575px) {

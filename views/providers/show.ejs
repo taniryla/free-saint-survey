@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-    <section id="providers-show-page" class="ml-10">
+    <section id="providers-show-page" class="d-flex justify-content-center">
         <div class="card" style="width: 80vmin;">
             <img class="card-img-top" src="https://i.imgur.com/vRkz31j.jpg" alt="Provider Img">
             <div class="card-body">
@@ -86,10 +86,9 @@
                 <br><br>
                 <h2 class="text-center">Add New Provider</h2><br>
 
-                <form method="GET" action="/providers/new">
-                    <input id="providerbtn" style="width: 50vmin; font-size: medium; text-align: center;" type="submit" value="Add New Provider" class="btn btn-success btn-lg">
-                </form>
-
+                <div class="d-flex justify-content-center">
+                    <a href="/providers/new" tyle="width: 50vmin; font-size: medium; text-align: center;" type="submit" class="btn btn-success btn-lg">Add New Provider</a>
+                </div>
 
                 <br><br><br><br><br>
                 <h2 id="reviewh2" class="ml-20">Reviews</h2><br><br>
