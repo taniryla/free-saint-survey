@@ -59,7 +59,7 @@ body>main h1:first-child {
 #add-review-form *,
 #add-comment-form *,
 #add-performer-form * {
-    font-size: 20px;
+    font-size: 4vmin;
     padding: 5px;
     border-radius: 5px;
 }
