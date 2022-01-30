@@ -31,10 +31,8 @@ function show(req, res) {
 function create(req, res) {
     var recipe = new Recipe(req.body);
     recipe.save(function(err) {
-        // one way to handle errors
         if (err) return res.redirect('/recipes/new');
         console.log(recipe);
-        // for now, redirect right back to new.ejs
         res.redirect(`/recipes/${recipe._id}`);
     });
 }

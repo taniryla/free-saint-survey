@@ -33,8 +33,8 @@ body {
 }
 
 #recipebtn {
-    float: right;
-    margin-right: 25vmin;
+    display: flex;
+    justify-content: center;
 }
 
 body>main {
@@ -356,6 +356,25 @@ li {
         justify-content: center;
         font-size: 2vmin;
     }
+    #onestop {
+        display: flex;
+        margin-left: 4vmin;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #datascience {
+        display: flex;
+        margin-left: 4vmin;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #slider3 {
+        max-width: 325px;
+        margin-left: 0;
+        margin-top: 20vmin;
+    }
 }
 
 @media (max-width: 767px) {
@@ -382,11 +401,24 @@ li {
         align-content: center;
         justify-content: center;
     }
+    #datascience {
+        display: flex;
+        max-width: 600px;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    #slider3 {
+        margin-left: 10px;
+    }
 }
 
 @media (min-width: 768px) {
     body {
         background: white;
+    }
+    #slider3 {
+        margin-left: 10px;
     }
 }
 
