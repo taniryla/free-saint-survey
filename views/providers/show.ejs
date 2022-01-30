@@ -1,35 +1,37 @@
 <%- include('../partials/header') %>
 
-    <section id="providers-show-page" class="d-flex justify-content-center">
-        <div class="card" style="width: 80vmin;">
-            <img class="card-img-top" src="https://i.imgur.com/vRkz31j.jpg" alt="Provider Img">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <%= provider.name %>
-                </h5>
-                <p class="card-text">
-                    <%= provider.service %>
-                </p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-light text-muted">
-                    <%= provider.address.street1 %>
-                </li>
-                <% if (provider.address.street2) { %>
+    <section id="providers-show-page">
+        <div class="d-flex justify-content-center">
+            <div class="card" style="width: 80vmin;">
+                <img class="card-img-top" src="https://i.imgur.com/vRkz31j.jpg" alt="Provider Img">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= provider.name %>
+                    </h5>
+                    <p class="card-text">
+                        <%= provider.service %>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
                     <li class="list-group-item bg-light text-muted">
-                        <%= provider.address.street2 %>
+                        <%= provider.address.street1 %>
                     </li>
-                    <% } %>
+                    <% if (provider.address.street2) { %>
                         <li class="list-group-item bg-light text-muted">
-                            <%= provider.address.city %>
-                                <%= provider.address.state %>
-                                    <%= provider.address.zip %>
+                            <%= provider.address.street2 %>
                         </li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">
-                    <%= provider.url %>
-                </a>
+                        <% } %>
+                            <li class="list-group-item bg-light text-muted">
+                                <%= provider.address.city %>
+                                    <%= provider.address.state %>
+                                        <%= provider.address.zip %>
+                            </li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">
+                        <%= provider.url %>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
