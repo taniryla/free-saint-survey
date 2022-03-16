@@ -15,7 +15,7 @@ As this prototype develops, it will iterate with user journey stories and client
 
 # Three Year Plan
 
-![This is a snapshot of what this app will do](https://i.imgur.com/kH43J4a.png)
+![This is a snapshot of what this app will do](https://i.imgur.com/KkFEuH8.png)
 
 
 The challenges in developing this product:
